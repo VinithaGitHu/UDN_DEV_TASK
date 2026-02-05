@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "260"
+mappingDefinitions:
+  SRC:
+    database: UND_DB
+    schema: SRC_DEP
+  TARGET:
+    database: UND_DB
+    schema: TGT_DEP
+name: New Environment
+type: Environment

@@ -1,0 +1,140 @@
+fileVersion: 1
+id: "556"
+isDisabled: false
+metadata:
+  defaultStorageLocation: null
+  error: null
+  nodeMetadataSpec: |
+    capitalized: Unpivot
+    short: UPVT
+    plural: UNPIVOTS
+    tagColor: '#29B2DB'
+
+    deployStrategy: advanced
+    isColumnResyncEnabled: true
+
+    config:
+      - groupName: Options
+        items:
+          - type: materializationSelector
+            isRequired: true
+            default: table
+            options:
+              - table
+              - view
+              - transient table
+
+          - displayName: Unpivot Mode
+            attributeName: pivotMode
+            type: dropdownSelector
+            default: Standard
+            options:
+              - Standard
+              - Simplified
+            isRequired: true
+
+          - displayName: Truncate Before
+            attributeName: truncateBefore
+            type: toggleButton
+            default: false
+            enableIf: "{% if node.materializationType == 'view' %} false {% else %} true {% endif %}"
+
+          - displayName: Enable Tests
+            attributeName: testsEnabled
+            type: toggleButton
+            default: false
+            enableIf: "{% if node.materializationType == 'view' %} false {% else %} true {% endif %}"
+
+      - groupName: Simplified Unpivot Mode Options
+        enableIf: "{% if config.pivotMode == 'Simplified' %} true {% else %} false {% endif %}"
+        items:
+          - displayName: Key Column
+            type: columnDropdownSelector
+            attributeName: skeyColDropdown
+
+          - displayName: Key Column
+            type: textBox
+            attributeName: skeyColTextBox
+            isRequired: false
+
+          - displayName: Value Column
+            type: columnDropdownSelector
+            attributeName: svalColDropdown
+
+          - displayName: Value Column
+            type: textBox
+            attributeName: svalColTextBox
+            isRequired: false
+
+          - displayName: Aggregate Function
+            type: dropdownSelector
+            attributeName: sfuncname
+            default: AVG
+            options:
+              - AVG
+              - MAX
+              - MIN
+              - COUNT
+              - SUM
+
+      - groupName: Filter Options
+        enableIf: "{% if config.pivotMode == 'Simplified' %} true {% else %} false {% endif %}"
+        items:
+          - displayName: Filter Column
+            type: textBox
+            attributeName: filterColumn
+            isRequired: false
+
+          - displayName: Filter Operator
+            type: dropdownSelector
+            attributeName: filterOperator
+            options:
+              - '='
+              - '!='
+              - 'IN'
+              - 'NOT IN'
+            isRequired: false
+
+          - displayName: Filter Value(s)
+            type: textBox
+            attributeName: filterValues
+            isRequired: false
+
+      - groupName: Standard Unpivot Mode Options
+        enableIf: "{% if config.pivotMode == 'Standard' %} true {% else %} false {% endif %}"
+        items:
+          - displayName: Infer Structure of Unpivot Data
+            attributeName: inferunpivot
+            type: toggleButton
+            default: false
+
+          - displayName: Value Column
+            attributeName: valColTextBox
+            type: textBox
+            isRequired: false
+
+          - displayName: Name Column
+            attributeName: nameColTextBox
+            type: textBox
+            isRequired: false
+
+          - displayName: Column List
+            type: tabular
+            attributeName: tabValueColumn
+            isRequired: false
+            columns:
+              - displayName: Column
+                type: columnDropdownSelector
+                attributeName: valColDropdown
+                enableIf: "{% if config.inferunpivot %} true {% else %} false {% endif %}"
+
+              - displayName: Column
+                type: textBox
+                attributeName: colTextBox
+
+          - displayName: Include NULLs
+            attributeName: includenull
+            type: toggleButton
+            default: false
+name: unpivot0.1
+type: NodeType
