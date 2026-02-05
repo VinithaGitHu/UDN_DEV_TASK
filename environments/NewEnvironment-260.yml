@@ -3,7 +3,7 @@ id: "260"
 mappingDefinitions:
   SRC:
     database: UND_DB
-    schema: SRC_DEP
+    schema: SRC_UDN
   TARGET:
     database: UND_DB
     schema: TGT_DEP
