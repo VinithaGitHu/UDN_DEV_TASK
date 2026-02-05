@@ -311,7 +311,7 @@ does not permit copying or modification for any other purpose.
             {% endif %}
         {% endif %}
 
-		{%if createTest == true and currentState.node.materializationType != desiredState.node.materializationType  %}
+		{%if currentState.node.materializationType != desiredState.node.materializationType  %}
 
             {{ stage('Drop ' + currentState.node.materializationType + ' ', true, "sql", "drop") }}
 			
