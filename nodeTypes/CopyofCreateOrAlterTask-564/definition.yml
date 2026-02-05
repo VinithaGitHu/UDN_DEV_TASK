@@ -16,7 +16,6 @@ metadata:
     - groupName: Create Table Options
 
       items:
-       
       - type: toggleButton
         attributeName: clusterKey
         displayName: Cluster Key
