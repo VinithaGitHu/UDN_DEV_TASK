@@ -1,0 +1,88 @@
+fileVersion: 1
+id: 5cefaafc-0a41-4ec8-a007-dcfe95da04ba
+name: PVT_SALES_UNPIVOT
+operation:
+  config:
+    Colvol1: ""
+    aggfunc:
+      items:
+        - {}
+    aggfunc1:
+      items:
+        - funcname1: null
+    defaultval: ""
+    defvalue: false
+    excolval: false
+    exlcol:
+      items:
+        - {}
+    filterColumn: ""
+    filterOperator: ""
+    filterValues: ""
+    inferPivot: false
+    pivotMode: Standard
+    samKeyColval: false
+    sfuncname: AVG
+    sincol: true
+    skeyColDropdown: ""
+    skeyColTextBox: AMOUNT
+    subqueryval1: ""
+    svalColDropdown: ""
+    svalColTextBox: MONTH
+    tabKeyColumn:
+      items:
+        - keyColTextBox: ""
+    tabValueColumn:
+      items:
+        - valColTextBox: ""
+    testsEnabled: false
+    trunc: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: SRC
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55c274ca-167c-4c2c-b00b-9d972c3b0f82
+          stepCounter: 5cefaafc-0a41-4ec8-a007-dcfe95da04ba
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: DATA
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          SALES_UNPIVOT: c0c03a23-d653-44cb-829e-41f9b8c6f5c0
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: SALES_UNPIVOT
+        join:
+          joinCondition: FROM {{ ref('SRC', 'SALES_UNPIVOT') }} "SALES_UNPIVOT"
+        name: PVT_SALES_UNPIVOT
+        noLinkRefs: []
+  name: PVT_SALES_UNPIVOT
+  overrideSQL: false
+  schema: ""
+  sqlType: "555"
+  type: sql
+  version: 1
+type: Node

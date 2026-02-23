@@ -48,57 +48,42 @@ metadata:
       - groupName: Simplified Unpivot Mode Options
         enableIf: "{% if config.pivotMode == 'Simplified' %} true {% else %} false {% endif %}"
         items:
-          - displayName: Key Column
-            type: columnDropdownSelector
-            attributeName: skeyColDropdown
-
-          - displayName: Key Column
+          - displayName: Pre-SQL
+            attributeName: preSQL
             type: textBox
-            attributeName: skeyColTextBox
+            syntax: sql
             isRequired: false
+            enableIf: "{% if node.materializationType == 'view' %} false {% else %} true {% endif %}"
 
-          - displayName: Value Column
-            type: columnDropdownSelector
-            attributeName: svalColDropdown
-
-          - displayName: Value Column
+          - displayName: Post-SQL
+            attributeName: postSQL
             type: textBox
-            attributeName: svalColTextBox
+            syntax: sql
             isRequired: false
-
-          - displayName: Aggregate Function
-            type: dropdownSelector
-            attributeName: sfuncname
-            default: AVG
-            options:
-              - AVG
-              - MAX
-              - MIN
-              - COUNT
-              - SUM
+            enableIf: "{% if node.materializationType == 'view' %} false {% else %} true {% endif %}"
 
       - groupName: Filter Options
         enableIf: "{% if config.pivotMode == 'Simplified' %} true {% else %} false {% endif %}"
         items:
-          - displayName: Filter Column
-            type: textBox
-            attributeName: filterColumn
-            isRequired: false
+        - displayName: Filter Column
+          type: textBox
+          attributeName: filterColumn
+          isRequired: false
 
-          - displayName: Filter Operator
-            type: dropdownSelector
-            attributeName: filterOperator
-            options:
-              - '='
-              - '!='
-              - 'IN'
-              - 'NOT IN'
-            isRequired: false
+        - displayName: Filter Operator
+          type: dropdownSelector
+          attributeName: filterOperator
+          options:
+          - '='
+          - '!='
+          - 'IN'
+          - 'NOT IN'
+          isRequired: false
 
-          - displayName: Filter Value(s)
-            type: textBox
-            attributeName: filterValues
-            isRequired: false
+        - displayName: Filter Value(s)
+          type: textBox
+          attributeName: filterValues
+          isRequired: false
 
       - groupName: Standard Unpivot Mode Options
         enableIf: "{% if config.pivotMode == 'Standard' %} true {% else %} false {% endif %}"

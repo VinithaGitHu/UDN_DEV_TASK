@@ -1,5 +1,5 @@
 fileVersion: 1
-id: 890468f8-6355-4e20-b9ea-ec1fff116646
+id: 9f7f77d6-82d8-427c-97c3-c1f90158ba83
 name: SALES_SOURCE
 operation:
   database: ""
@@ -13,8 +13,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: bca2b962-ead0-45a4-9b60-741d70284535
-          stepCounter: 890468f8-6355-4e20-b9ea-ec1fff116646
+          columnCounter: b479d221-9848-41de-a720-48b847678b55
+          stepCounter: 9f7f77d6-82d8-427c-97c3-c1f90158ba83
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -32,8 +32,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 1a191122-eb2c-43a4-8248-009940fa534c
-          stepCounter: 890468f8-6355-4e20-b9ea-ec1fff116646
+          columnCounter: 255e7e32-40f1-4223-b106-351d7448d497
+          stepCounter: 9f7f77d6-82d8-427c-97c3-c1f90158ba83
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -51,8 +51,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 7e87cc4a-9b78-4ec1-8829-169c70ca3786
-          stepCounter: 890468f8-6355-4e20-b9ea-ec1fff116646
+          columnCounter: 30cf02c3-1d7e-4a02-a3ce-0393a235f1e2
+          stepCounter: 9f7f77d6-82d8-427c-97c3-c1f90158ba83
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -70,8 +70,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 86fd1c94-5489-44bc-915d-b6aad449a58c
-          stepCounter: 890468f8-6355-4e20-b9ea-ec1fff116646
+          columnCounter: 7d06514b-6587-4818-9a18-342fcbb0fb18
+          stepCounter: 9f7f77d6-82d8-427c-97c3-c1f90158ba83
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
