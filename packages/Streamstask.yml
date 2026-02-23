@@ -1,34 +1,40 @@
 config:
   entities:
     nodeTypes:
-      "345":
+      "149":
         defaultStorageLocation: null
         isDisabled: false
-      "419":
+      "150":
         defaultStorageLocation: null
         isDisabled: false
-      "533":
+      "151":
         defaultStorageLocation: null
         isDisabled: false
-      "534":
+      "152":
         defaultStorageLocation: null
         isDisabled: false
-      "535":
+      "153":
         defaultStorageLocation: null
         isDisabled: false
-      "548":
+      "154":
         defaultStorageLocation: null
         isDisabled: false
-      "549":
+      "155":
         defaultStorageLocation: null
         isDisabled: false
-      "550":
+      "428":
+        defaultStorageLocation: null
+        isDisabled: false
+      "483":
+        defaultStorageLocation: null
+        isDisabled: false
+      "567":
         defaultStorageLocation: null
         isDisabled: false
   packageVariables: ""
 fileVersion: 1
-id: "@coalesce/snowflake/create-or-alter-package"
-name: create-or-alter-package
-packageID: "@coalesce/snowflake/create-or-alter-package"
-releaseID: 4e43a14e-7a82-45e4-a379-0c8a84423b49
+id: "@coalesce/snowflake/streams-and-tasks"
+name: Streamstask
+packageID: "@coalesce/snowflake/streams-and-tasks"
+releaseID: f3aa6033-3d57-4911-98ab-58bca149c89a
 type: Package

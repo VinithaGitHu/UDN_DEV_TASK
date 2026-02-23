@@ -1,0 +1,197 @@
+fileVersion: 1
+id: 431e8bcb-feb7-4845-b675-0a7788e27594
+name: AP_SUPPLIER
+operation:
+  config:
+    capUpdate: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    createas: table
+    devMode: true
+    dmlCol:
+      columnCounter: 465ca8a1-3399-459e-a808-a39a4c0e2159
+      stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+    dmlDelete: D
+    dmlInsert: I
+    dmlUpdate: U
+    flagSrcStream: false
+    initialRows: true
+    insertOnly: false
+    orderBy:
+      items:
+        - colName:
+            columnCounter: c98ab7a7-be44-48ac-9caf-50a2793d9afa
+            stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+          sortOrd: desc
+    orderByDateTime:
+      items:
+        - {}
+    partitionBy:
+      items:
+        - partColName:
+            columnCounter: 00e932e5-adcb-4056-8556-00e161ee588d
+            stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+    predTask: ""
+    recordVersioning: Datetime Column
+    redeploymentBehavior: Create At Existing Stream
+    retainLastNonDeleteFlag: false
+    rootTask: ""
+    scheduleCRON: 5 0-23 * * * America/Los_Angeles
+    schedulePeriod: "60"
+    schedulePeriodOption: Minutes
+    schedulingMode: Warehouse Task
+    serverlessSize: MEDIUM
+    softDeleteFlag: false
+    sourceType: Table
+    whName: <WAREHOUSE_NAME>
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: SRC
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00e932e5-adcb-4056-8556-00e161ee588d
+          stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: S_SUPPKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b7f28d5c-b883-484e-a7fa-a18a30cf5241
+                stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 465ca8a1-3399-459e-a808-a39a4c0e2159
+          stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: S_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 01fd8a0a-5664-4869-aae5-9c0cf5981a65
+                stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1aa1815c-cdcc-47ed-9bfc-030ad77c5741
+          stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+        config: {}
+        dataType: VARCHAR(40)
+        description: ""
+        name: S_ADDRESS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 26575b12-f3f4-4291-b423-dc736f94e97f
+                stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed3bed4a-e04e-43e5-972c-bc8e6f36637b
+          stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: S_NATIONKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: debaba38-eac9-4869-a6bc-cc19ad26a41b
+                stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5cb7d7a-7025-46c4-b1b4-e5b88494b489
+          stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+        config: {}
+        dataType: VARCHAR(15)
+        description: ""
+        name: S_PHONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 131ba25f-8537-4204-9ce8-475f3e58de4f
+                stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6a4003f-9f95-4793-9512-fea74ae37ae0
+          stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: S_ACCTBAL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5a9ef021-cf52-469a-9146-c5bf99ac026e
+                stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 11de00f6-3841-43fd-975f-e3cf88ed1ad6
+          stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+        config: {}
+        dataType: VARCHAR(101)
+        description: ""
+        name: S_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 38274665-f48b-4352-a68d-6515b7f9fa7f
+                stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c98ab7a7-be44-48ac-9caf-50a2793d9afa
+          stepCounter: 431e8bcb-feb7-4845-b675-0a7788e27594
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        hmUpdTs: true
+        name: DM_UPDATE_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp::timestamp_ntz
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          SUPPLIER: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: SUPPLIER
+        join:
+          joinCondition: FROM {{ ref('SRC', 'SUPPLIER') }} "SUPPLIER"
+        name: AP_SUPPLIER
+        noLinkRefs: []
+  name: AP_SUPPLIER
+  overrideSQL: false
+  schema: ""
+  sqlType: Deferredmerge:::300
+  type: sql
+  version: 1
+type: Node

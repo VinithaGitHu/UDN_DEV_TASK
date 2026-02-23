@@ -1,13 +1,11 @@
 fileVersion: 1
-id: 2eea9054-c373-4457-b7ba-19b08ddc5848
-name: STG_SUPPLIER
+id: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+name: FCT_SUPPLIER
 operation:
   config:
-    insertStrategy: INSERT
     postSQL: ""
     preSQL: ""
     testsEnabled: true
-    truncateBefore: true
   database: ""
   deployEnabled: true
   description: ""
@@ -19,8 +17,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 243115e1-fd09-40d5-96b7-f4b75dd28d90
-          stepCounter: 2eea9054-c373-4457-b7ba-19b08ddc5848
+          columnCounter: 25eed090-375f-48e7-9da0-24ad98684226
+          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -33,8 +31,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 59e4e658-f941-4bcd-9257-374337bc0f0a
-          stepCounter: 2eea9054-c373-4457-b7ba-19b08ddc5848
+          columnCounter: 2bb56fbe-d729-43d3-baeb-16b1d47e826a
+          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -47,8 +45,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ead106a1-b8c0-4eca-b170-6a052e6227ad
-          stepCounter: 2eea9054-c373-4457-b7ba-19b08ddc5848
+          columnCounter: 72ef8724-864d-4258-8a00-3f36cbd33b9f
+          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
         config: {}
         dataType: VARCHAR(40)
         description: ""
@@ -61,8 +59,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 1e35d4cd-543f-49c4-82d5-d5955dd48af5
-          stepCounter: 2eea9054-c373-4457-b7ba-19b08ddc5848
+          columnCounter: da37d7af-08d6-4668-84ac-c5f65382ce58
+          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -75,8 +73,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 7a41ca56-5ee6-4bff-ad9a-7d6d82b30733
-          stepCounter: 2eea9054-c373-4457-b7ba-19b08ddc5848
+          columnCounter: d5732ff3-ec12-4c51-90c1-f860946fa20b
+          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
         config: {}
         dataType: VARCHAR(15)
         description: ""
@@ -89,8 +87,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 29a86a93-4275-42e3-ae5d-d3b8f46f18d3
-          stepCounter: 2eea9054-c373-4457-b7ba-19b08ddc5848
+          columnCounter: 2d98065c-0a4c-423f-9608-3b2ad55ac51e
+          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
         config: {}
         dataType: NUMBER(12,2)
         description: ""
@@ -103,8 +101,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 3a5c2ce5-e7c7-4858-b92a-ccd02d66a74a
-          stepCounter: 2eea9054-c373-4457-b7ba-19b08ddc5848
+          columnCounter: 334c3efa-f9cb-47a1-8cf3-b473de75cf59
+          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
         config: {}
         dataType: VARCHAR(101)
         description: ""
@@ -115,6 +113,40 @@ operation:
               - columnCounter: 38274665-f48b-4352-a68d-6515b7f9fa7f
                 stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6b01c04-b831-4b52-9abe-000b7af30e64
+          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6beb085-ad1a-40e1-8d6c-d1cb119667a7
+          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -127,12 +159,12 @@ operation:
             nodeName: SUPPLIER
         join:
           joinCondition: FROM {{ ref('SRC', 'SUPPLIER') }} "SUPPLIER"
-        name: STG_SUPPLIER
+        name: FCT_SUPPLIER
         noLinkRefs: []
-  name: STG_SUPPLIER
+  name: FCT_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: Stage
+  sqlType: Fact
   type: sql
   version: 1
 type: Node
