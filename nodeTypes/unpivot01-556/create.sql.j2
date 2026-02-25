@@ -47,26 +47,40 @@ does not permit copying or modification for any other purpose.
           {%- set ns = namespace(pcolumn = [],collist = []) %}
 		  
   
-         {#Simplified pivot mode#}
+         {#Simplified Unpivot mode#}
 		 {#Create table with single variant column#}
-	{%if desiredState.config.pivotMode == 'Simplified' and desiredState.node.materializationType != 'view' %}
-			{{ stage('Create Pivot '+ desiredState.node.materializationType, true, "sql", "create") }}
+	{%if desiredState.config.UnpivotMode == 'Simplified' and desiredState.node.materializationType != 'view'  %}
+	
+	        {% set source = desiredState.sources[0] %}
+            {%set joinclause = source.join%}
+			{{ stage('Create Unpivot'+ desiredState.node.materializationType, true, "sql", "create") }}
+			
+			
+			
+			CREATE OR REPLACE TABLE {{ ref_no_link(node.location.name, node.name) }}
+			(
 
-            CREATE OR REPLACE {{desiredState.node.materializationType}} {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }}
-            (
-                 DATA VARIANT
-             )
-            {%- if node.description | length > 0 %} COMMENT = '{{ node.description | escape }}'{% endif %}
-            
-	{%elif desiredState.config.pivotMode == 'Simplified' and desiredState.node.materializationType == 'view' %}
+				KEY STRING,
 
-         {{ stage('Create Pivot '+ desiredState.node.materializationType, true, "sql", "create") }}
+				VALUE STRING
+				{%if desiredState.config.addcolumns%}
+                {% for col in source.columns if col.name not in ('KEY','VALUE') -%}        
+                        ,"{{ col.name }}" {{ col.dataType }}
+                {% endfor %}
+                {%endif%}    
+
+			)
+		   {%- if node.description | length > 0 %} COMMENT = '{{ node.description | escape }}'{% endif %}
+
+	{%elif desiredState.config.UnpivotMode == 'Simplified' and desiredState.node.materializationType == 'view' %}
+
+         {{ stage('Create Unpivot'+ desiredState.node.materializationType, true, "sql", "create") }}
 		 
-		 {%set ns.pcolumn = desiredState.config.stabValueColumn.get('items') | map(attribute='sColTextBox')|list%}
+		 --{%set ns.pcolumn = desiredState.config.stabValueColumn.get('items') | map(attribute='sColTextBox')|list%}
 		 
-		 {%for col in ns.pcolumn%}
-              {%set ns.collist = ns.collist + ['"'+col+'"']%}
-         {%endfor%}
+		 --{%for col in ns.pcolumn%}
+              --{%set ns.collist = ns.collist + ['"'+col+'"']%}
+         --{%endfor%}
 		 
         CREATE OR REPLACE {{desiredState.node.materializationType}} {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }}
         AS
@@ -80,9 +94,9 @@ does not permit copying or modification for any other purpose.
          {% endif %}
           ) TGT
 		  
-         UNPIVOT(({{desiredState.config.svalColTextBox}}) FOR {{desiredState.config.snameColTextBox}} IN ({{ns.collist|join(',')}})) AS UNPVT
+         --UNPIVOT(({{desiredState.config.svalColTextBox}}) FOR {{desiredState.config.snameColTextBox}} IN ({{ns.collist|join(',')}})) AS UNPVT
 
-    {%elif desiredState.pivotMode == 'Standard'%}
+    {%elif desiredState.UnpivotMode == 'Standard'%}
 		
 		
 		{#Infer Unpivot structure#}

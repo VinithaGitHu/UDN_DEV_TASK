@@ -1,5 +1,5 @@
 fileVersion: 1
-id: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+id: 21230ae9-106e-4784-a823-25a24f7e0f72
 name: FCT_SUPPLIER
 operation:
   config:
@@ -17,8 +17,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 25eed090-375f-48e7-9da0-24ad98684226
-          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+          columnCounter: 5decb06c-c322-4300-ad35-c2fbf25fbbf3
+          stepCounter: 21230ae9-106e-4784-a823-25a24f7e0f72
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -31,8 +31,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 2bb56fbe-d729-43d3-baeb-16b1d47e826a
-          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+          columnCounter: 0444ed13-9142-4f06-93e1-84dab393b345
+          stepCounter: 21230ae9-106e-4784-a823-25a24f7e0f72
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -45,8 +45,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 72ef8724-864d-4258-8a00-3f36cbd33b9f
-          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+          columnCounter: 5d64948e-dfad-4a81-8358-c9c5998726d9
+          stepCounter: 21230ae9-106e-4784-a823-25a24f7e0f72
         config: {}
         dataType: VARCHAR(40)
         description: ""
@@ -59,8 +59,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: da37d7af-08d6-4668-84ac-c5f65382ce58
-          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+          columnCounter: 35fa7980-7c32-4b10-85bf-9e0782f80d25
+          stepCounter: 21230ae9-106e-4784-a823-25a24f7e0f72
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -73,8 +73,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: d5732ff3-ec12-4c51-90c1-f860946fa20b
-          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+          columnCounter: 1fbb2bde-5e95-4c11-969d-45ff9b4ce219
+          stepCounter: 21230ae9-106e-4784-a823-25a24f7e0f72
         config: {}
         dataType: VARCHAR(15)
         description: ""
@@ -87,8 +87,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 2d98065c-0a4c-423f-9608-3b2ad55ac51e
-          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+          columnCounter: d879cd0a-1d15-48fa-9e6c-975e85c9cca5
+          stepCounter: 21230ae9-106e-4784-a823-25a24f7e0f72
         config: {}
         dataType: NUMBER(12,2)
         description: ""
@@ -101,8 +101,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 334c3efa-f9cb-47a1-8cf3-b473de75cf59
-          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+          columnCounter: 3dc66af9-acbe-4e8c-b2b9-bc40abb5efe3
+          stepCounter: 21230ae9-106e-4784-a823-25a24f7e0f72
         config: {}
         dataType: VARCHAR(101)
         description: ""
@@ -118,8 +118,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: b6b01c04-b831-4b52-9abe-000b7af30e64
-          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+          columnCounter: 6779ea35-aab8-4666-a928-ea5727b7c319
+          stepCounter: 21230ae9-106e-4784-a823-25a24f7e0f72
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
@@ -135,8 +135,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: b6beb085-ad1a-40e1-8d6c-d1cb119667a7
-          stepCounter: 00e5ed65-7ae1-4d97-84bb-35c1f3947314
+          columnCounter: 01b4f490-616f-4a5b-8523-c36e1068bc70
+          stepCounter: 21230ae9-106e-4784-a823-25a24f7e0f72
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""

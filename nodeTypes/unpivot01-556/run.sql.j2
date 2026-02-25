@@ -22,37 +22,45 @@ does not permit copying or modification for any other purpose.
         {% endif %}
 {% endfor %}
 
-{% if (node.materializationType == 'table' or node.materializationType == 'transient table') and (config.pivotMode == 'Simplified')  %}
+{% if (node.materializationType == 'table' or node.materializationType == 'transient table') and (config.UnpivotMode == 'Simplified')  %}
 
   {%if config.trunc %}
-  		{{ stage('Truncate Pivot Table') }}
+  		{{ stage('Truncate UnPivot Table') }}
 			TRUNCATE IF EXISTS {{ ref_no_link(node.location.name, node.name) }}
   {%endif%}
   
-  {%set ns.pcolumn = config.stabValueColumn.get('items') | map(attribute='scolTextBox')|list%}
-  
-  {%for col in ns.pcolumn%}
-      {%set ns.collist = ns.collist + ['"'+col+'"']%}
-   {%endfor%}
 	
-  {{ stage('Insert data into Pivot table') }}
-    INSERT INTO {{ this }}
-   (
-    DATA
+  {{ stage('Insert data into UnPivot table') }}
+  INSERT INTO {{ this }}
+  (
+	KEY,
+	VALUE
+	{%if config.addcolumns -%}
+    {% for col in source.columns if col.name not in ('KEY','VALUE') -%}        
+      ,{{ col.name }}
+    {% endfor -%}
+    {%endif%}
    )
-   SELECT
-   PARSE_JSON(REPLACE(TO_CHAR(OBJECT_CONSTRUCT_KEEP_NULL(*)), '''', '')) AS DATA
-   FROM (
-  SELECT *
-  {{ source.join }}
-  {% if config.filterColumn %}
-  WHERE {{ config.filterColumn }} {{ config.filterOperator }} ({{ config.filterValues }})
-  {% endif %}
-  ) TGT
-  UNPIVOT({{config.svalColTextBox}} FOR {{config.snameColTextBox}} IN ({{ns.collist|join(',')}})) AS UNPVT
+	SELECT
+	f.KEY,
+	f.VALUE
+	{%if config.addcolumns -%}
+    {% for col in source.columns if col.name not in ('KEY','VALUE') -%}        
+      ,{{ get_source_transform(col) }} AS "{{ col.name }}"
+    {% endfor -%}
+    {%endif%}
+	FROM
+	( SELECT
+	OBJECT_CONSTRUCT_KEEP_NULL(*) AS json
+	{{ source.join }}
+	) AS FLN,
+	TABLE(FLATTEN(input => FLN.json)) f
+	{% if config.filterOperator and config.filterValues %}
+	WHERE f.KEY {{ config.filterOperator }} ({{ config.filterValues }})
+	{% endif %}
+	
 
-
-{% elif (node.materializationType == 'table' or node.materializationType == 'transient table') and (config.pivotMode == 'Standard')  %}
+{% elif (node.materializationType == 'table' or node.materializationType == 'transient table') and (config.UnpivotMode == 'Standard')  %}
 
 {% if config.truncateBefore  %}
 

@@ -25,7 +25,7 @@ metadata:
               - transient table
 
           - displayName: Unpivot Mode
-            attributeName: pivotMode
+            attributeName: UnpivotMode
             type: dropdownSelector
             default: Standard
             options:
@@ -46,8 +46,17 @@ metadata:
             enableIf: "{% if node.materializationType == 'view' %} false {% else %} true {% endif %}"
 
       - groupName: Simplified Unpivot Mode Options
-        enableIf: "{% if config.pivotMode == 'Simplified' %} true {% else %} false {% endif %}"
+        enableIf: "{% if config.UnpivotMode == 'Simplified' %} true {% else %} false {% endif %}"
         items:
+
+          - type: label
+            displayName: ⚠️ Warning - On Redeployment, PARTITION Changes will Drop and Recreate the Table
+            attributeName: labelPartWarning
+          - displayName: Adding extra Columns in mapping grid(After Resync)
+            attributeName: addcolumns
+            type: toggleButton
+            default: false
+            
           - displayName: Pre-SQL
             attributeName: preSQL
             type: textBox
@@ -63,7 +72,7 @@ metadata:
             enableIf: "{% if node.materializationType == 'view' %} false {% else %} true {% endif %}"
 
       - groupName: Filter Options
-        enableIf: "{% if config.pivotMode == 'Simplified' %} true {% else %} false {% endif %}"
+        enableIf: "{% if config.UnpivotMode == 'Simplified' %} true {% else %} false {% endif %}"
         items:
         - displayName: Filter Column
           type: textBox
@@ -86,7 +95,7 @@ metadata:
           isRequired: false
 
       - groupName: Standard Unpivot Mode Options
-        enableIf: "{% if config.pivotMode == 'Standard' %} true {% else %} false {% endif %}"
+        enableIf: "{% if config.UnpivotMode == 'Standard' %} true {% else %} false {% endif %}"
         items:
           - displayName: Infer Structure of Unpivot Data
             attributeName: inferunpivot

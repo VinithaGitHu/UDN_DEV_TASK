@@ -1,5 +1,5 @@
 fileVersion: 1
-id: e7022c5d-d941-40cc-b42f-17c651818eda
+id: c1286905-3bb1-480c-8b4c-f2222153fa1f
 name: WRK_SUPPLIER
 operation:
   config:
@@ -10,14 +10,6 @@ operation:
     asofJoinMain: false
     asofJoinON: false
     asofJoinUSING: false
-    clusterKey: false
-    clusterKeyConfig:
-      items:
-        - {}
-    clusterKeyConfigExpressions:
-      items:
-        - {}
-    clusterKeyExpressions: false
     groupByAll: false
     insertStrategy: INSERT
     orderby: false
@@ -40,8 +32,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 85bc91ce-db10-467b-9086-86eb3cd18685
-          stepCounter: e7022c5d-d941-40cc-b42f-17c651818eda
+          columnCounter: d7829791-bbbc-4f22-94d8-c17e52b2cdd4
+          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -54,8 +46,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 67def194-dc3a-4441-bfb1-033a521b2ea4
-          stepCounter: e7022c5d-d941-40cc-b42f-17c651818eda
+          columnCounter: 34766012-a5d2-4461-9d83-bb250cb8acea
+          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -68,8 +60,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 11ed37d5-e8b9-4e66-81fa-f8a9e479f468
-          stepCounter: e7022c5d-d941-40cc-b42f-17c651818eda
+          columnCounter: 293e2793-f54a-4714-9251-f74a07855ebb
+          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
         config: {}
         dataType: VARCHAR(40)
         description: ""
@@ -82,8 +74,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 7ee04cfb-91d6-4b28-9062-d3cf84cf58aa
-          stepCounter: e7022c5d-d941-40cc-b42f-17c651818eda
+          columnCounter: 1feab251-8c5c-46ac-b7e3-5e7db3cdf2d3
+          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -96,8 +88,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: b3543948-72ac-487f-8978-90a4513cfda0
-          stepCounter: e7022c5d-d941-40cc-b42f-17c651818eda
+          columnCounter: 4279379d-4168-49fe-bdb3-aeeef3b78f1c
+          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
         config: {}
         dataType: VARCHAR(15)
         description: ""
@@ -110,8 +102,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 01a6c5d2-a61c-448d-be6e-d2d0379831b0
-          stepCounter: e7022c5d-d941-40cc-b42f-17c651818eda
+          columnCounter: 2453a764-eee6-410b-8639-b89f926f03e4
+          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
         config: {}
         dataType: NUMBER(12,2)
         description: ""
@@ -124,8 +116,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 1a4929c0-0fc4-4642-ad26-1f48a8a8bba2
-          stepCounter: e7022c5d-d941-40cc-b42f-17c651818eda
+          columnCounter: 0ecaf885-5e36-4b09-a1bc-41d7ce2ad52e
+          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
         config: {}
         dataType: VARCHAR(101)
         description: ""
@@ -153,7 +145,7 @@ operation:
   name: WRK_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: Base-node-types-advanced-deploy:::179
+  sqlType: Base-node-types:::204
   type: sql
   version: 1
 type: Node

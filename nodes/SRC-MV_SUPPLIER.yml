@@ -1,9 +1,8 @@
 fileVersion: 1
-id: 725f9def-9073-475a-a21a-4997429ae1c8
-name: AP_SUPPLIER
+id: d6fd5042-3bda-4728-9350-bb0922df7bf4
+name: MV_SUPPLIER
 operation:
   config:
-    capUpdate: false
     clusterKey: false
     clusterKeyConfig:
       items:
@@ -12,49 +11,21 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
-    createas: table
-    devMode: true
-    dmlDelete: D
-    dmlInsert: I
-    dmlUpdate: U
-    flagSrcStream: false
-    initialRows: true
-    insertOnly: false
-    orderBy:
-      items:
-        - {}
-    orderByDateTime:
-      items:
-        - {}
-    partitionBy:
-      items:
-        - {}
-    predTask: ""
-    recordVersioning: Datetime Column
-    redeploymentBehavior: Create At Existing Stream
-    retainLastNonDeleteFlag: false
-    rootTask: ""
-    scheduleCRON: 5 0-23 * * * America/Los_Angeles
-    schedulePeriod: "60"
-    schedulePeriodOption: Minutes
-    schedulingMode: Warehouse Task
-    serverlessSize: MEDIUM
-    softDeleteFlag: false
-    sourceType: Table
-    whName: <WAREHOUSE_NAME>
+    secureOption: false
+    selectDistinct: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: SRC
-  materializationType: table
+  materializationType: Materialized View
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5ef61488-6948-44d9-b7da-ed001696e06a
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: 29b4b6bb-2b23-41a7-b989-e61357400f81
+          stepCounter: d6fd5042-3bda-4728-9350-bb0922df7bf4
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -67,8 +38,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: b336e9bf-6af7-49e7-9e19-5a026ef1acb2
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: ea287f84-8c9e-4a10-b786-44a45cd9ed9f
+          stepCounter: d6fd5042-3bda-4728-9350-bb0922df7bf4
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -81,8 +52,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 26fd8df8-d899-44ce-9dcd-364d1046e941
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: ee4208b2-690e-4498-8957-7fd4e67b13b3
+          stepCounter: d6fd5042-3bda-4728-9350-bb0922df7bf4
         config: {}
         dataType: VARCHAR(40)
         description: ""
@@ -95,8 +66,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 1389d918-3525-4b48-9064-c27af1a562bf
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: 5a33f88c-d5a1-4838-a3d5-54aef03adaca
+          stepCounter: d6fd5042-3bda-4728-9350-bb0922df7bf4
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -109,8 +80,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 06ae7be7-2ef7-4edb-9b83-5016c99c2004
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: 4b43dcee-8462-4c82-9d15-5a1a204b530b
+          stepCounter: d6fd5042-3bda-4728-9350-bb0922df7bf4
         config: {}
         dataType: VARCHAR(15)
         description: ""
@@ -123,8 +94,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 13570ca7-be30-4dd5-a7b1-eee17b5fcdd9
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: a74a40ef-a387-4a75-876c-7a19bbdc87d9
+          stepCounter: d6fd5042-3bda-4728-9350-bb0922df7bf4
         config: {}
         dataType: NUMBER(12,2)
         description: ""
@@ -137,8 +108,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 3fd8c422-adef-4a2c-b814-a2733b8a8d66
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: d9993857-9a22-4e1e-bd46-b90f7d946343
+          stepCounter: d6fd5042-3bda-4728-9350-bb0922df7bf4
         config: {}
         dataType: VARCHAR(101)
         description: ""
@@ -149,23 +120,6 @@ operation:
               - columnCounter: 38274665-f48b-4352-a68d-6515b7f9fa7f
                 stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 06c4a418-4cef-4c4e-a07d-b310cd3db2cf
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
-        config: {}
-        dataType: timestamp
-        defaultValue: ""
-        description: ""
-        hmUpdTs: true
-        name: DM_UPDATE_TIMESTAMP
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: current_timestamp::timestamp_ntz
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -178,12 +132,12 @@ operation:
             nodeName: SUPPLIER
         join:
           joinCondition: FROM {{ ref('SRC', 'SUPPLIER') }} "SUPPLIER"
-        name: AP_SUPPLIER
+        name: MV_SUPPLIER
         noLinkRefs: []
-  name: AP_SUPPLIER
+  name: MV_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: Deferredmerge:::300
+  sqlType: MView:::178
   type: sql
   version: 1
 type: Node

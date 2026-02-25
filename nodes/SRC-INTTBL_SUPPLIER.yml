@@ -1,9 +1,9 @@
 fileVersion: 1
-id: 725f9def-9073-475a-a21a-4997429ae1c8
-name: AP_SUPPLIER
+id: cbc11bc5-6acc-4e96-b1cf-156e8ee9948b
+name: INTTBL_SUPPLIER
 operation:
   config:
-    capUpdate: false
+    autoRefresh: false
     clusterKey: false
     clusterKeyConfig:
       items:
@@ -12,49 +12,27 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
-    createas: table
-    devMode: true
-    dmlDelete: D
-    dmlInsert: I
-    dmlUpdate: U
-    flagSrcStream: false
-    initialRows: true
-    insertOnly: false
-    orderBy:
+    groupByAll: false
+    insertStrategy: UNION ALL
+    lagSpecification:
       items:
         - {}
-    orderByDateTime:
-      items:
-        - {}
-    partitionBy:
-      items:
-        - {}
-    predTask: ""
-    recordVersioning: Datetime Column
-    redeploymentBehavior: Create At Existing Stream
-    retainLastNonDeleteFlag: false
-    rootTask: ""
-    scheduleCRON: 5 0-23 * * * America/Los_Angeles
-    schedulePeriod: "60"
-    schedulePeriodOption: Minutes
-    schedulingMode: Warehouse Task
-    serverlessSize: MEDIUM
-    softDeleteFlag: false
-    sourceType: Table
-    whName: <WAREHOUSE_NAME>
+    selectDistinct: false
+    testsEnabled: false
+    warehouseName: dev_wh_xs
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: SRC
-  materializationType: table
+  materializationType: interactive table
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5ef61488-6948-44d9-b7da-ed001696e06a
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: 30f26fa2-59a2-46d4-84e3-b4b25dba1776
+          stepCounter: cbc11bc5-6acc-4e96-b1cf-156e8ee9948b
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -67,8 +45,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: b336e9bf-6af7-49e7-9e19-5a026ef1acb2
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: 9951c507-4a68-4813-9036-3e360f9668bc
+          stepCounter: cbc11bc5-6acc-4e96-b1cf-156e8ee9948b
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -81,8 +59,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 26fd8df8-d899-44ce-9dcd-364d1046e941
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: dd9e3913-5958-4442-9915-57ef0e655057
+          stepCounter: cbc11bc5-6acc-4e96-b1cf-156e8ee9948b
         config: {}
         dataType: VARCHAR(40)
         description: ""
@@ -95,8 +73,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 1389d918-3525-4b48-9064-c27af1a562bf
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: 0a8b9ae4-e295-48bd-912a-7d8b1038bd39
+          stepCounter: cbc11bc5-6acc-4e96-b1cf-156e8ee9948b
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -109,8 +87,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 06ae7be7-2ef7-4edb-9b83-5016c99c2004
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: 783b04e7-fe5f-42fe-9e92-265d4fa3832b
+          stepCounter: cbc11bc5-6acc-4e96-b1cf-156e8ee9948b
         config: {}
         dataType: VARCHAR(15)
         description: ""
@@ -123,8 +101,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 13570ca7-be30-4dd5-a7b1-eee17b5fcdd9
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: 7e3566bf-48b7-4e14-ab95-01f42c17f7f5
+          stepCounter: cbc11bc5-6acc-4e96-b1cf-156e8ee9948b
         config: {}
         dataType: NUMBER(12,2)
         description: ""
@@ -137,8 +115,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 3fd8c422-adef-4a2c-b814-a2733b8a8d66
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          columnCounter: 1b58ffc9-694a-46f9-820c-94dde142cc45
+          stepCounter: cbc11bc5-6acc-4e96-b1cf-156e8ee9948b
         config: {}
         dataType: VARCHAR(101)
         description: ""
@@ -149,23 +127,6 @@ operation:
               - columnCounter: 38274665-f48b-4352-a68d-6515b7f9fa7f
                 stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 06c4a418-4cef-4c4e-a07d-b310cd3db2cf
-          stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
-        config: {}
-        dataType: timestamp
-        defaultValue: ""
-        description: ""
-        hmUpdTs: true
-        name: DM_UPDATE_TIMESTAMP
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: current_timestamp::timestamp_ntz
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -178,12 +139,12 @@ operation:
             nodeName: SUPPLIER
         join:
           joinCondition: FROM {{ ref('SRC', 'SUPPLIER') }} "SUPPLIER"
-        name: AP_SUPPLIER
+        name: INTTBL_SUPPLIER
         noLinkRefs: []
-  name: AP_SUPPLIER
+  name: INTTBL_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: Deferredmerge:::300
+  sqlType: interactivetable:::602
   type: sql
   version: 1
 type: Node
