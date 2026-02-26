@@ -14,21 +14,29 @@ operation:
     clusterKeyExpressions: false
     createas: table
     devMode: true
-    dmlDelete: D
-    dmlInsert: I
+    dmlCol:
+      columnCounter: 5ef61488-6948-44d9-b7da-ed001696e06a
+      stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+    dmlDelete: "2"
+    dmlInsert: "1"
     dmlUpdate: U
     flagSrcStream: false
     initialRows: true
     insertOnly: false
     orderBy:
       items:
-        - {}
+        - colName:
+            columnCounter: 06c4a418-4cef-4c4e-a07d-b310cd3db2cf
+            stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
+          sortOrd: desc
     orderByDateTime:
       items:
         - {}
     partitionBy:
       items:
-        - {}
+        - partColName:
+            columnCounter: 5ef61488-6948-44d9-b7da-ed001696e06a
+            stepCounter: 725f9def-9073-475a-a21a-4997429ae1c8
     predTask: ""
     recordVersioning: Datetime Column
     redeploymentBehavior: Create At Existing Stream

@@ -4,10 +4,12 @@ name: INTTBL_SUPPLIER
 operation:
   config:
     autoRefresh: false
-    clusterKey: false
+    clusterKey: true
     clusterKeyConfig:
       items:
-        - {}
+        - columnName:
+            columnCounter: 0a8b9ae4-e295-48bd-912a-7d8b1038bd39
+            stepCounter: cbc11bc5-6acc-4e96-b1cf-156e8ee9948b
     clusterKeyConfigExpressions:
       items:
         - {}
