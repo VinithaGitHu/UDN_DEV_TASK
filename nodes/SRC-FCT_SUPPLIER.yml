@@ -3,9 +3,55 @@ id: 99b3c279-122d-4b1a-9278-bb1b02474075
 name: FCT_SUPPLIER
 operation:
   config:
-    postSQL: ""
-    preSQL: ""
+    changetracking: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    customZeroKeyValues:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    insertZeroKey: false
+    insertZeroKeyAdvanced: false
+    insertZeroKeyBol: "TRUE"
+    insertZeroKeyDate: 01-01-1900
+    insertZeroKeyStr: UNKNOWN
+    insertZeroKeySurrogateKey: "0"
+    insertZeroKeyTimestamp: "1900-01-01 00:00:00.000"
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
+    selectDistinct: false
     testsEnabled: true
+    treatNullAsCurrentTimestamp: false
+    truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
@@ -15,6 +61,19 @@ operation:
   metadata:
     appliedNodeTests: []
     columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 547d5465-a1c5-408d-b2fb-76da3ab16759
+          stepCounter: 99b3c279-122d-4b1a-9278-bb1b02474075
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: FCT_SUPPLIER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: ebff5c1c-f9b6-4374-9b81-868caecb5da8
@@ -148,6 +207,58 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83221a14-3bf5-4256-9a97-11eb1f543b36
+          stepCounter: 99b3c279-122d-4b1a-9278-bb1b02474075
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 280aa426-1082-4052-8617-7169d06a0484
+          stepCounter: 99b3c279-122d-4b1a-9278-bb1b02474075
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 33fb4482-7d57-4294-b918-b998a1c16695
+          stepCounter: 99b3c279-122d-4b1a-9278-bb1b02474075
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6f75395-24ff-4083-9903-4b2612bb4f3e
+          stepCounter: 99b3c279-122d-4b1a-9278-bb1b02474075
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -165,7 +276,7 @@ operation:
   name: FCT_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: Fact
+  sqlType: "567"
   type: sql
   version: 1
 type: Node

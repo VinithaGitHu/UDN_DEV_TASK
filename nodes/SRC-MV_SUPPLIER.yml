@@ -3,6 +3,7 @@ id: c478f366-69a7-474d-9935-5c1231367c47
 name: MV_SUPPLIER
 operation:
   config:
+    changetracking: false
     clusterKey: false
     clusterKeyConfig:
       items:
@@ -11,17 +12,68 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
-    secureOption: false
+    constraintsspec:
+      items:
+        - {}
+    customZeroKeyValues:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    insertZeroKey: false
+    insertZeroKeyAdvanced: false
+    insertZeroKeyBol: "TRUE"
+    insertZeroKeyDate: 01-01-1900
+    insertZeroKeyStr: UNKNOWN
+    insertZeroKeySurrogateKey: "0"
+    insertZeroKeyTimestamp: "1900-01-01 00:00:00.000"
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
     selectDistinct: false
+    testsEnabled: false
+    treatNullAsCurrentTimestamp: false
+    truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: SRC
-  materializationType: Materialized View
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84418df2-555e-444b-b21d-6a2576788bd1
+          stepCounter: c478f366-69a7-474d-9935-5c1231367c47
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: MV_SUPPLIER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: faba2046-e7d5-4869-abdb-4765478a91a3
@@ -120,6 +172,84 @@ operation:
               - columnCounter: 38274665-f48b-4352-a68d-6515b7f9fa7f
                 stepCounter: 5d26fa75-c721-4d1a-b15e-1dcbf3f33c63
             transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18f0a990-3de8-4c6a-9e9a-3519dc839813
+          stepCounter: c478f366-69a7-474d-9935-5c1231367c47
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20924a31-520f-485b-8f4d-6791c0a26087
+          stepCounter: c478f366-69a7-474d-9935-5c1231367c47
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 80e5b4eb-a90d-4645-a258-e1278195f25c
+          stepCounter: c478f366-69a7-474d-9935-5c1231367c47
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e685455c-95c3-4830-b635-636c9466d778
+          stepCounter: c478f366-69a7-474d-9935-5c1231367c47
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90565ead-94b8-401b-93fc-c9ec8b3ab766
+          stepCounter: c478f366-69a7-474d-9935-5c1231367c47
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce4c9f4e-0ce8-41b3-aa27-9f15d19a61cf
+          stepCounter: c478f366-69a7-474d-9935-5c1231367c47
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -137,7 +267,7 @@ operation:
   name: MV_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: MView:::178
+  sqlType: "567"
   type: sql
   version: 1
 type: Node

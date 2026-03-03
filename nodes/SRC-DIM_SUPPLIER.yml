@@ -3,9 +3,55 @@ id: 1491b8e7-69e3-4d4c-ac56-aaaef9a6fa71
 name: DIM_SUPPLIER
 operation:
   config:
-    postSQL: ""
-    preSQL: ""
+    changetracking: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    customZeroKeyValues:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    insertZeroKey: false
+    insertZeroKeyAdvanced: false
+    insertZeroKeyBol: "TRUE"
+    insertZeroKeyDate: 01-01-1900
+    insertZeroKeyStr: UNKNOWN
+    insertZeroKeySurrogateKey: "0"
+    insertZeroKeyTimestamp: "1900-01-01 00:00:00.000"
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
+    selectDistinct: false
     testsEnabled: true
+    treatNullAsCurrentTimestamp: false
+    truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
@@ -250,7 +296,7 @@ operation:
   name: DIM_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: Dimension
+  sqlType: "567"
   type: sql
   version: 1
 type: Node
