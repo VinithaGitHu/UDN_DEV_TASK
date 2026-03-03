@@ -1,39 +1,27 @@
 fileVersion: 1
-id: c1286905-3bb1-480c-8b4c-f2222153fa1f
-name: WRK_SUPPLIER
+id: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+name: V_SUPPLIER
 operation:
   config:
-    asofColumn:
-      items:
-        - {}
-    asofJoin: true
-    asofJoinMain: false
-    asofJoinON: false
-    asofJoinUSING: false
+    OverrideSQLCreate: false
     groupByAll: false
-    insertStrategy: INSERT
-    orderby: false
-    orderbycolumn:
-      items:
-        - {}
-    postSQL: ""
-    preSQL: ""
+    insertStrategy: UNION
+    secureoption: false
     selectDistinct: false
     testsEnabled: false
-    truncateBefore: true
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: SRC
-  materializationType: table
+  materializationType: view
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: d7829791-bbbc-4f22-94d8-c17e52b2cdd4
-          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
+          columnCounter: 6b39b3f3-3bce-4f59-b86a-c17bb9842cee
+          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -46,8 +34,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 34766012-a5d2-4461-9d83-bb250cb8acea
-          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
+          columnCounter: 164d9867-38ed-4138-9040-04c9de734114
+          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -60,8 +48,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 293e2793-f54a-4714-9251-f74a07855ebb
-          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
+          columnCounter: d860a166-bdeb-47e6-9c58-7a17552fd46e
+          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
         config: {}
         dataType: VARCHAR(40)
         description: ""
@@ -74,8 +62,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 1feab251-8c5c-46ac-b7e3-5e7db3cdf2d3
-          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
+          columnCounter: 29f46edf-0597-4537-96fe-3587ef9df731
+          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -88,8 +76,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 4279379d-4168-49fe-bdb3-aeeef3b78f1c
-          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
+          columnCounter: 820b7ae6-e01d-4d79-b340-513c3172a09f
+          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
         config: {}
         dataType: VARCHAR(15)
         description: ""
@@ -102,8 +90,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 2453a764-eee6-410b-8639-b89f926f03e4
-          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
+          columnCounter: c13e841f-c5d8-4e12-bae2-da7ff35eec05
+          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
         config: {}
         dataType: NUMBER(12,2)
         description: ""
@@ -116,8 +104,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 0ecaf885-5e36-4b09-a1bc-41d7ce2ad52e
-          stepCounter: c1286905-3bb1-480c-8b4c-f2222153fa1f
+          columnCounter: 1f4b29b5-236c-405c-b1aa-68f07b8d89db
+          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
         config: {}
         dataType: VARCHAR(101)
         description: ""
@@ -139,13 +127,13 @@ operation:
           - locationName: SRC
             nodeName: SUPPLIER
         join:
-          joinCondition: FROM  {{ ref('SRC', 'SUPPLIER') }} SUPPLIER
-        name: WRK_SUPPLIER
+          joinCondition: FROM {{ ref('SRC', 'SUPPLIER') }} "SUPPLIER"
+        name: V_SUPPLIER
         noLinkRefs: []
-  name: WRK_SUPPLIER
+  name: V_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: Base-node-types:::204
+  sqlType: Base-node-types:::188
   type: sql
   version: 1
 type: Node

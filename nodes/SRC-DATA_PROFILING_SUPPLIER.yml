@@ -1,5 +1,5 @@
 fileVersion: 1
-id: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+id: 8c49020e-b0c1-471b-b286-9fa639a678a7
 name: DATA_PROFILING_SUPPLIER
 operation:
   config:
@@ -32,8 +32,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 1c9dc59d-efc1-4d8d-bf40-cf59998f4829
-          stepCounter: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+          columnCounter: 6fd7dc3f-c0fc-4d6b-898b-de1277964353
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -46,8 +46,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 6488b0fe-1793-428b-a57d-c629f1a615ca
-          stepCounter: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+          columnCounter: e39c7a4e-0893-443f-a617-9289329a536e
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -60,8 +60,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 99236503-851c-427a-b538-0fac04914c18
-          stepCounter: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+          columnCounter: 7a1c5aa9-0cfd-4a6d-b0e9-0cd65683fcc7
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
         dataType: VARCHAR(40)
         description: ""
@@ -74,8 +74,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 2f642832-d898-4fa5-b257-23500d6d020d
-          stepCounter: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+          columnCounter: b837b2c5-42db-44bb-aa3f-4f39c67ba50d
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -88,8 +88,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 0d306076-4fa9-4c85-9a18-c5e021eb8110
-          stepCounter: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+          columnCounter: 593c7e00-f2d3-4e2e-86b6-06189c2c2aac
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
         dataType: VARCHAR(15)
         description: ""
@@ -102,8 +102,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 0ea50f6c-d339-4054-96d2-c1ea815f3c9b
-          stepCounter: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+          columnCounter: dfe1536d-a805-496b-a250-add84bfaf083
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
         dataType: NUMBER(12,2)
         description: ""
@@ -116,8 +116,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 12d02645-b822-4602-b3dd-2b796ac6b5fb
-          stepCounter: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+          columnCounter: 32291825-e68b-4224-8590-c8164b9d4d83
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
         dataType: VARCHAR(101)
         description: ""
@@ -133,8 +133,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 06fb1b71-d1e0-410f-affe-1884a13e136c
-          stepCounter: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+          columnCounter: aa4d6ce7-3af9-4d00-821a-50f21b8c4b09
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
         dataType: VARCHAR
         defaultValue: ""
@@ -150,8 +150,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 0d07d428-2aba-46dc-b9e4-a2bccf28bdea
-          stepCounter: 9a360b7b-a66f-4f41-a9a9-4a756541ce85
+          columnCounter: bbd7a00c-08eb-483f-afda-3896ae554440
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
         dataType: TIMESTAMP
         defaultValue: ""
