@@ -1,13 +1,15 @@
 fileVersion: 1
-id: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
-name: V_SUPPLIER1
+id: eb9fa66e-2439-4e86-869c-f313f484cda7
+name: INTTBL_SUPPLIER1
 operation:
   config:
     changetracking: false
-    clusterKey: false
+    clusterKey: true
     clusterKeyConfig:
       items:
-        - {}
+        - columnName:
+            columnCounter: b681907b-cbcb-4cd0-80d6-5b0ea55838d3
+            stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
     clusterKeyConfigExpressions:
       items:
         - {}
@@ -27,7 +29,7 @@ operation:
         - {}
     groupByAll: false
     inlineconst: false
-    insertStrategy: UNION
+    insertStrategy: UNION ALL
     insertZeroKey: false
     insertZeroKeyAdvanced: false
     insertZeroKeyBol: "TRUE"
@@ -56,32 +58,32 @@ operation:
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: SRC
+  locationName: TARGET
   materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c4fa74e3-1256-4f6b-9b00-922c01064ba6
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: b5a3443d-c7db-40b7-9a45-24601305e7db
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: NUMBER
         description: ""
         isSurrogateKey: true
-        name: V_SUPPLIER_KEY
+        name: INTTBL_SUPPLIER_KEY
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 6b39b3f3-3bce-4f59-b86a-c17bb9842cee
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: b681907b-cbcb-4cd0-80d6-5b0ea55838d3
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: NUMBER(38,0)
         description: ""
-        isBusinessKey: true
+        isChangeTracking: true
         name: S_SUPPKEY
         nullable: true
         sourceColumnReferences:
@@ -91,8 +93,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 164d9867-38ed-4138-9040-04c9de734114
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: 5670beda-b7a0-44a7-9b75-0dc627c5fc4a
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -105,8 +107,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: d860a166-bdeb-47e6-9c58-7a17552fd46e
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: 9e843d74-1914-4d54-bc2d-b52556a82d16
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: VARCHAR(40)
         description: ""
@@ -119,11 +121,12 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 29f46edf-0597-4537-96fe-3587ef9df731
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: acc267fc-af1e-4992-b4f8-d5f65bab1739
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: S_NATIONKEY
         nullable: true
         sourceColumnReferences:
@@ -133,8 +136,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 820b7ae6-e01d-4d79-b340-513c3172a09f
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: 3762f528-6c17-4d34-ab3b-7001d16bdce5
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: VARCHAR(15)
         description: ""
@@ -147,8 +150,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c13e841f-c5d8-4e12-bae2-da7ff35eec05
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: e3055ffe-f856-427e-b7b0-c58992c07303
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: NUMBER(12,2)
         description: ""
@@ -161,8 +164,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 1f4b29b5-236c-405c-b1aa-68f07b8d89db
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: 56cb6324-9376-4ba3-b666-337aeb08dc3f
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: VARCHAR(101)
         description: ""
@@ -175,8 +178,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5e2a0418-7e31-4bd6-8fb4-7296b38d1326
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: 3e8556bd-0608-497b-adf8-ec0bdbe84da4
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: NUMBER
         description: ""
@@ -188,8 +191,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: e9e61c16-fce1-483f-b9d0-a18a849062eb
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: 8abaf70d-80c7-4a50-8dad-bb8dbce1272c
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: VARCHAR
         description: ""
@@ -201,8 +204,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: b937b40f-4fa5-4a69-b0e0-d1625d8640a1
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: 483faa27-1f0d-4183-9558-e9b61a141914
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: TIMESTAMP
         description: ""
@@ -214,8 +217,8 @@ operation:
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5988137d-58f3-462c-bc9b-51275abd1190
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: 564c2a91-ed52-4bc8-b3b4-904c81f52d4e
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: TIMESTAMP
         description: ""
@@ -227,8 +230,8 @@ operation:
             transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 10e8620e-be0a-469d-b243-0fe0c74be5ae
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: 350e1e2c-5e0c-4464-b17a-991d6f56e86a
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: TIMESTAMP
         description: ""
@@ -240,8 +243,8 @@ operation:
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 50f7eb1e-c989-48c8-b0e4-e39b8a330e7d
-          stepCounter: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
+          columnCounter: c8068019-9458-4ea3-bba3-b9dbaaa452a9
+          stepCounter: eb9fa66e-2439-4e86-869c-f313f484cda7
         config: {}
         dataType: TIMESTAMP
         description: ""
@@ -263,9 +266,9 @@ operation:
             nodeName: SUPPLIER
         join:
           joinCondition: FROM {{ ref('SRC', 'SUPPLIER') }} "SUPPLIER"
-        name: V_SUPPLIER1
+        name: INTTBL_SUPPLIER1
         noLinkRefs: []
-  name: V_SUPPLIER1
+  name: INTTBL_SUPPLIER1
   overrideSQL: false
   schema: ""
   sqlType: "567"
