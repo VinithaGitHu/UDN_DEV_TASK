@@ -3,18 +3,61 @@ id: 25dd6828-a0a9-464f-81d2-1392cb050066
 name: V_PART
 operation:
   config:
-    OverrideSQLCreate: false
+    changetracking: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    customZeroKeyValues:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
     groupByAll: false
+    inlineconst: false
     insertStrategy: UNION
-    secureoption: false
+    insertZeroKey: false
+    insertZeroKeyAdvanced: false
+    insertZeroKeyBol: "TRUE"
+    insertZeroKeyDate: 01-01-1900
+    insertZeroKeyStr: UNKNOWN
+    insertZeroKeySurrogateKey: "0"
+    insertZeroKeyTimestamp: "1900-01-01 00:00:00.000"
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
     selectDistinct: false
     testsEnabled: false
+    treatNullAsCurrentTimestamp: false
+    truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: TARGET
-  materializationType: view
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
@@ -25,6 +68,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: P_PARTKEY
         nullable: true
         sourceColumnReferences:
@@ -144,6 +188,97 @@ operation:
               - columnCounter: 424864f3-b987-4b5e-8cb9-4d2b4f083e41
                 stepCounter: c3b24987-59b6-4275-bb06-6ca31df3977c
             transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8cf63654-6bb4-4207-8481-aaa4af8386b3
+          stepCounter: 25dd6828-a0a9-464f-81d2-1392cb050066
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4bd6ee4d-b315-499c-aaad-ff78e972c94d
+          stepCounter: 25dd6828-a0a9-464f-81d2-1392cb050066
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 458a7e3e-fa97-4cb8-b01d-4f8931d34109
+          stepCounter: 25dd6828-a0a9-464f-81d2-1392cb050066
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 15c2422b-d387-49ac-97df-825a9f47a5bd
+          stepCounter: 25dd6828-a0a9-464f-81d2-1392cb050066
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60a7a894-df53-4a03-8416-83bf2c6335d8
+          stepCounter: 25dd6828-a0a9-464f-81d2-1392cb050066
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cfd48eee-1545-47f9-955f-8fc40aba22da
+          stepCounter: 25dd6828-a0a9-464f-81d2-1392cb050066
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c9e53c5b-ac7c-4042-9489-b459399ebe03
+          stepCounter: 25dd6828-a0a9-464f-81d2-1392cb050066
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: V_PART_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -161,7 +296,7 @@ operation:
   name: V_PART
   overrideSQL: false
   schema: ""
-  sqlType: Base-node-types:::188
+  sqlType: "567"
   type: sql
   version: 1
 type: Node
