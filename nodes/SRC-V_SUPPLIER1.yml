@@ -1,6 +1,6 @@
 fileVersion: 1
 id: 9c4c1e2d-1a0c-47c9-860e-4bf4f241e296
-name: V_SUPPLIER
+name: V_SUPPLIER1
 operation:
   config:
     changetracking: false
@@ -81,6 +81,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: S_SUPPKEY
         nullable: true
         sourceColumnReferences:
@@ -262,9 +263,9 @@ operation:
             nodeName: SUPPLIER
         join:
           joinCondition: FROM {{ ref('SRC', 'SUPPLIER') }} "SUPPLIER"
-        name: V_SUPPLIER
+        name: V_SUPPLIER1
         noLinkRefs: []
-  name: V_SUPPLIER
+  name: V_SUPPLIER1
   overrideSQL: false
   schema: ""
   sqlType: "567"

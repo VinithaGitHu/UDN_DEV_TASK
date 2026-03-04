@@ -63,24 +63,12 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 0bf4d13e-5e2d-4ab9-a2e7-bf9aaa6092d5
-          stepCounter: 17b3676f-676b-435e-aa06-bd70b084c63a
-        config: {}
-        dataType: NUMBER
-        description: ""
-        isSurrogateKey: true
-        name: WRK_SUPPLIER1_KEY
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
           columnCounter: d93f22c8-82db-4c81-9466-178f506bccc6
           stepCounter: 17b3676f-676b-435e-aa06-bd70b084c63a
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: S_SUPPKEY
         nullable: true
         sourceColumnReferences:
@@ -250,6 +238,19 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0bf4d13e-5e2d-4ab9-a2e7-bf9aaa6092d5
+          stepCounter: 17b3676f-676b-435e-aa06-bd70b084c63a
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: WRK_SUPPLIER1_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:

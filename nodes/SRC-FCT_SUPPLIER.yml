@@ -63,19 +63,6 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 547d5465-a1c5-408d-b2fb-76da3ab16759
-          stepCounter: 99b3c279-122d-4b1a-9278-bb1b02474075
-        config: {}
-        dataType: NUMBER
-        description: ""
-        isSurrogateKey: true
-        name: FCT_SUPPLIER_KEY
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
           columnCounter: ebff5c1c-f9b6-4374-9b81-868caecb5da8
           stepCounter: 99b3c279-122d-4b1a-9278-bb1b02474075
         config: {}
@@ -259,6 +246,19 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 547d5465-a1c5-408d-b2fb-76da3ab16759
+          stepCounter: 99b3c279-122d-4b1a-9278-bb1b02474075
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: FCT_SUPPLIER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:

@@ -1,6 +1,6 @@
 fileVersion: 1
 id: eb9fa66e-2439-4e86-869c-f313f484cda7
-name: INTTBL_SUPPLIER
+name: INTTBL_SUPPLIER1
 operation:
   config:
     changetracking: false
@@ -83,6 +83,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isChangeTracking: true
         name: S_SUPPKEY
         nullable: true
         sourceColumnReferences:
@@ -125,6 +126,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: S_NATIONKEY
         nullable: true
         sourceColumnReferences:
@@ -264,9 +266,9 @@ operation:
             nodeName: SUPPLIER
         join:
           joinCondition: FROM {{ ref('SRC', 'SUPPLIER') }} "SUPPLIER"
-        name: INTTBL_SUPPLIER
+        name: INTTBL_SUPPLIER1
         noLinkRefs: []
-  name: INTTBL_SUPPLIER
+  name: INTTBL_SUPPLIER1
   overrideSQL: false
   schema: ""
   sqlType: "567"

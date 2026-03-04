@@ -3,33 +3,77 @@ id: 8c49020e-b0c1-471b-b286-9fa639a678a7
 name: DATA_PROFILING_SUPPLIER
 operation:
   config:
-    flagSrcStream: true
-    isRowCount: false
-    multiStreamBehavior: AND
-    predTask: DATA_TRANSFORMATION_ROOT_TASK
-    rootTask: DATA_TRANSFORMATION_ROOT_TASK
-    sampleMode: Sample
-    sampleOption: Fixed Row
-    samplePercent: "10"
-    sampleRows: "1000"
-    scheduleCRON: 5 0-23 * * * America/Los_Angeles
-    schedulePeriod: "60"
-    schedulePeriodOption: Predecessor
-    schedulingMode: Warehouse Task
-    serverlessSize: MEDIUM
-    taskSchedule: false
+    changetracking: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    customZeroKeyValues:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    insertZeroKey: false
+    insertZeroKeyAdvanced: false
+    insertZeroKeyBol: "TRUE"
+    insertZeroKeyDate: 01-01-1900
+    insertZeroKeyStr: UNKNOWN
+    insertZeroKeySurrogateKey: "0"
+    insertZeroKeyTimestamp: "1900-01-01 00:00:00.000"
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
+    selectDistinct: false
     testsEnabled: false
+    treatNullAsCurrentTimestamp: false
     truncateBefore: true
-    whName: <WAREHOUSE_NAME>
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: SRC
-  materializationType: task
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b2d1067d-0e63-4f56-b9aa-79737afe06fa
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: DATA_PROFILING_SUPPLIER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 6fd7dc3f-c0fc-4d6b-898b-de1277964353
@@ -37,6 +81,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: S_SUPPKEY
         nullable: true
         sourceColumnReferences:
@@ -136,15 +181,14 @@ operation:
           columnCounter: aa4d6ce7-3af9-4d00-821a-50f21b8c4b09
           stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
         config: {}
-        dataType: VARCHAR
-        defaultValue: ""
+        dataType: TIMESTAMP
         description: ""
         isSystemUpdateDate: true
         name: PROFILE_METRIC
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
-            transform: "NULL"
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
       - acceptedValues:
           strictMatch: true
           values: []
@@ -162,6 +206,58 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 02f65527-9135-4181-bb41-0301b538fba1
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f534d091-639d-4575-bca4-54f685e8d199
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd3920be-da3a-48e0-aff2-cbb792fe2cc8
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 373ddce8-3594-4a8b-941e-7bda7e990139
+          stepCounter: 8c49020e-b0c1-471b-b286-9fa639a678a7
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -179,7 +275,7 @@ operation:
   name: DATA_PROFILING_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: Dataquality:::416
+  sqlType: "567"
   type: sql
   version: 1
 type: Node
