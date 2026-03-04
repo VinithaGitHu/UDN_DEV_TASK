@@ -1,11 +1,11 @@
 fileVersion: 1
-id: "271"
+id: "270"
 mappingDefinitions:
   SRC:
     database: UND_DB
     schema: SRC_UDN
   TARGET:
     database: UND_DB
-    schema: TGT_REDEP
-name: New Environment
+    schema: TGT_DEP1
+name: New Environment_ReDep
 type: Environment
