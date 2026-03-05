@@ -3,6 +3,7 @@ id: 19d4fd03-601e-478d-9ecd-c99e5abb75e0
 name: MV_CUSTOMER
 operation:
   config:
+    changetracking: false
     clusterKey: false
     clusterKeyConfig:
       items:
@@ -11,17 +12,58 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
-    secureOption: false
+    constraintsspec:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
     selectDistinct: false
+    testsEnabled: false
+    treatNullAsCurrentTimestamp: false
+    truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: SRC
-  materializationType: Materialized View
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7d97e3f2-dbb4-4dc2-a75e-a7769d76cb82
+          stepCounter: 19d4fd03-601e-478d-9ecd-c99e5abb75e0
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: MV_CUSTOMER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 4a3d1a9e-0990-4588-9548-c85935da7585
@@ -29,6 +71,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: C_CUSTKEY
         nullable: true
         sourceColumnReferences:
@@ -134,6 +177,84 @@ operation:
               - columnCounter: e377a9a7-ed06-4400-be2d-fe7f11d5393a
                 stepCounter: d9941047-1271-4238-9354-d89db45d5341
             transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f18e0f40-6f1c-4108-8128-4a2d7efc380f
+          stepCounter: 19d4fd03-601e-478d-9ecd-c99e5abb75e0
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e980d292-2ebd-4ff2-ba88-01bf1b724006
+          stepCounter: 19d4fd03-601e-478d-9ecd-c99e5abb75e0
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d68384be-d04d-4ef0-902f-90a87e2d4982
+          stepCounter: 19d4fd03-601e-478d-9ecd-c99e5abb75e0
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 41d8f210-0068-44d4-b792-60326dc5f7e7
+          stepCounter: 19d4fd03-601e-478d-9ecd-c99e5abb75e0
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 162ccbd5-e7c9-4087-ada8-57d202f503ba
+          stepCounter: 19d4fd03-601e-478d-9ecd-c99e5abb75e0
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: abc1a2d6-b5ce-4c85-b8b1-f05c50e6ca9b
+          stepCounter: 19d4fd03-601e-478d-9ecd-c99e5abb75e0
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -151,7 +272,7 @@ operation:
   name: MV_CUSTOMER
   overrideSQL: false
   schema: ""
-  sqlType: MView:::178
+  sqlType: "574"
   type: sql
   version: 1
 type: Node

@@ -3,13 +3,7 @@ id: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
 name: WRK_CUSTOMER
 operation:
   config:
-    asofColumn:
-      items:
-        - {}
-    asofJoin: true
-    asofJoinMain: false
-    asofJoinON: false
-    asofJoinUSING: false
+    changetracking: false
     clusterKey: false
     clusterKeyConfig:
       items:
@@ -18,17 +12,36 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
     groupByAll: false
-    insertStrategy: INSERT
+    inlineconst: false
+    insertStrategy: UNION
+    lastModifiedComparison: false
+    maxdataretention: ""
     orderby: false
     orderbycolumn:
       items:
         - {}
-    postSQL: ""
-    preSQL: ""
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
     selectDistinct: false
     testsEnabled: false
+    treatNullAsCurrentTimestamp: false
     truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
@@ -40,11 +53,25 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
+          columnCounter: 5a5958fd-0ea6-47c7-b50c-0ce1500f4562
+          stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: WRK_CUSTOMER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
           columnCounter: 0d42b61f-e0dc-4cf1-a3a3-24e5df57cb3b
           stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: C_CUSTKEY
         nullable: true
         sourceColumnReferences:
@@ -150,6 +177,84 @@ operation:
               - columnCounter: e377a9a7-ed06-4400-be2d-fe7f11d5393a
                 stepCounter: d9941047-1271-4238-9354-d89db45d5341
             transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: efd16e18-4530-44dc-b284-4fc4fd59253a
+          stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 11280924-9ec5-4909-ab17-89655832b2ad
+          stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b791d543-9341-4eaa-b9f1-833928dd2e91
+          stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a447112d-a658-4522-8a2b-0a61221c1c06
+          stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 615035b2-b084-4b10-af20-1f1b96035240
+          stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aeb40655-3513-4af9-8880-05989994856c
+          stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -167,7 +272,7 @@ operation:
   name: WRK_CUSTOMER
   overrideSQL: false
   schema: ""
-  sqlType: Base-node-types-advanced-deploy:::179
+  sqlType: "574"
   type: sql
   version: 1
 type: Node

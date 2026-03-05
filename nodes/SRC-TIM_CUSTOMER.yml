@@ -3,6 +3,7 @@ id: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
 name: TIM_CUSTOMER
 operation:
   config:
+    changetracking: false
     clusterKey: false
     clusterKeyConfig:
       items:
@@ -11,32 +12,36 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
-    devMode: true
-    flagSrcStream: true
-    groupByAll: false
-    insertStrategy: UNION
-    loadType: Insert
-    mergeOrderBy:
+    constraintsspec:
       items:
         - {}
-    multiStreamBehavior: AND
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    lastModifiedComparison: false
+    maxdataretention: ""
     orderby: false
     orderbycolumn:
       items:
         - {}
-    partitionBy:
+    outlineconst: false
+    primary: false
+    primarykeycon:
       items:
         - {}
-    predTask: DATA_TRANSFORMATION_ROOT_TASK
-    rootTask: DATA_TRANSFORMATION_ROOT_TASK
-    scheduleCRON: 5 0-23 * * * America/Los_Angeles
-    schedulePeriod: "60"
-    schedulePeriodOption: Minutes
-    schedulingMode: Warehouse Task
+    primarykeyname: ""
     selectDistinct: false
-    serverlessSize: MEDIUM
+    testsEnabled: false
+    treatNullAsCurrentTimestamp: false
     truncateBefore: true
-    whName: <WAREHOUSE_NAME>
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
@@ -48,11 +53,25 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
+          columnCounter: 504360f7-a463-42fd-a719-ea157ea745c8
+          stepCounter: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: TIM_CUSTOMER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
           columnCounter: 2e33232d-90f1-4bb7-accd-12bef6df7252
           stepCounter: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: C_CUSTKEY
         nullable: true
         sourceColumnReferences:
@@ -192,6 +211,58 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b6f4084-7f04-40e0-ae09-cc2c2ffaf988
+          stepCounter: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cdcf4b7b-b79b-4757-907f-f605a56a70cb
+          stepCounter: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c7e8cb7e-1a4b-48b0-a32f-6f5945a6552f
+          stepCounter: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4234de95-1ff8-4208-b54e-ef40c6180d7d
+          stepCounter: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -209,7 +280,7 @@ operation:
   name: TIM_CUSTOMER
   overrideSQL: false
   schema: ""
-  sqlType: Streamstask:::567
+  sqlType: "574"
   type: sql
   version: 1
 type: Node

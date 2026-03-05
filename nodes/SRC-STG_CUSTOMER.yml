@@ -3,11 +3,45 @@ id: f7a2fade-484a-4804-a74f-2a4981d580b5
 name: STG_CUSTOMER
 operation:
   config:
-    insertStrategy: INSERT
-    postSQL: ""
-    preSQL: ""
+    changetracking: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
+    selectDistinct: false
     testsEnabled: true
+    treatNullAsCurrentTimestamp: false
     truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
@@ -19,11 +53,25 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
+          columnCounter: c66b8110-8bde-4da4-82ef-bf6ffb0f41f1
+          stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: STG_CUSTOMER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
           columnCounter: a87ed9b4-8880-4e21-baf9-5629f3770c1d
           stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: C_CUSTKEY
         nullable: true
         sourceColumnReferences:
@@ -129,6 +177,84 @@ operation:
               - columnCounter: e377a9a7-ed06-4400-be2d-fe7f11d5393a
                 stepCounter: d9941047-1271-4238-9354-d89db45d5341
             transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d73262c2-5055-4d69-815a-fcdaf3e3f124
+          stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e2b2047-d66e-433b-bb8b-828a60eb74be
+          stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: edbbb78f-aee2-4789-adb8-cf322af596d7
+          stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59c2b701-d401-491f-928c-bc40b793915c
+          stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ebcf39c8-38f6-46df-a50f-405ca6feefa5
+          stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee5882f6-fe1a-4f34-89ad-755728505fa7
+          stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -146,7 +272,7 @@ operation:
   name: STG_CUSTOMER
   overrideSQL: false
   schema: ""
-  sqlType: Stage
+  sqlType: "574"
   type: sql
   version: 1
 type: Node

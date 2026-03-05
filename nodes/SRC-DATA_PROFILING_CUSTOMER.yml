@@ -3,33 +3,67 @@ id: 936a0b16-75c8-4ec0-81d5-5c9986ad55eb
 name: DATA_PROFILING_CUSTOMER
 operation:
   config:
-    flagSrcStream: true
-    isRowCount: false
-    multiStreamBehavior: AND
-    predTask: DATA_TRANSFORMATION_ROOT_TASK
-    rootTask: DATA_TRANSFORMATION_ROOT_TASK
-    sampleMode: Sample
-    sampleOption: Fixed Row
-    samplePercent: "10"
-    sampleRows: "1000"
-    scheduleCRON: 5 0-23 * * * America/Los_Angeles
-    schedulePeriod: "60"
-    schedulePeriodOption: Predecessor
-    schedulingMode: Warehouse Task
-    serverlessSize: MEDIUM
-    taskSchedule: false
+    changetracking: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
+    selectDistinct: false
     testsEnabled: false
+    treatNullAsCurrentTimestamp: false
     truncateBefore: true
-    whName: <WAREHOUSE_NAME>
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: SRC
-  materializationType: task
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f712f2df-47ef-4b8f-948d-8536f1057a63
+          stepCounter: 936a0b16-75c8-4ec0-81d5-5c9986ad55eb
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: DATA_PROFILING_CUSTOMER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
           columnCounter: de74ef64-dde7-44bb-9e9d-baa227c34c9c
@@ -37,6 +71,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: C_CUSTKEY
         nullable: true
         sourceColumnReferences:
@@ -150,15 +185,14 @@ operation:
           columnCounter: 9faceaa7-ae90-444c-9f98-76b4c2d36778
           stepCounter: 936a0b16-75c8-4ec0-81d5-5c9986ad55eb
         config: {}
-        dataType: VARCHAR
-        defaultValue: ""
+        dataType: TIMESTAMP
         description: ""
         isSystemUpdateDate: true
         name: PROFILE_METRIC
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
-            transform: "NULL"
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
       - acceptedValues:
           strictMatch: true
           values: []
@@ -176,6 +210,58 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ae235c7-38ca-430f-ae1a-b8d7f75d60f7
+          stepCounter: 936a0b16-75c8-4ec0-81d5-5c9986ad55eb
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b925468-4e09-4718-b6c4-609671a3032f
+          stepCounter: 936a0b16-75c8-4ec0-81d5-5c9986ad55eb
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee5a5aa3-1c4b-47db-8a3c-196239d2a33e
+          stepCounter: 936a0b16-75c8-4ec0-81d5-5c9986ad55eb
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 741563dd-b3c3-4c82-908b-956b3abecbb6
+          stepCounter: 936a0b16-75c8-4ec0-81d5-5c9986ad55eb
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -193,7 +279,7 @@ operation:
   name: DATA_PROFILING_CUSTOMER
   overrideSQL: false
   schema: ""
-  sqlType: Dataquality:::416
+  sqlType: "574"
   type: sql
   version: 1
 type: Node
