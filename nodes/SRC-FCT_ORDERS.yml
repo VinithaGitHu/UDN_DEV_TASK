@@ -3,6 +3,7 @@ id: 69f3ee71-5052-4739-a91f-9be4f1495dd1
 name: FCT_ORDERS
 operation:
   config:
+    changetracking: false
     clusterKey: false
     clusterKeyConfig:
       items:
@@ -11,25 +12,31 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
-    deleteStrategy: NO DELETE
-    excludeMergeList:
+    constraintsspec:
       items:
         - {}
-    excludeMergeToggle: false
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
     groupByAll: false
+    inlineconst: false
     insertStrategy: UNION ALL
     lastModifiedComparison: false
+    maxdataretention: ""
     orderby: false
     orderbycolumn:
       items:
         - {}
-    postSQL: ""
-    preSQL: ""
+    outlineconst: false
     primary: false
-    primaryKeyCol:
+    primarykeycon:
       items:
         - {}
-    primaryKeyName: ""
+    primarykeyname: ""
     selectDistinct: false
     testsEnabled: false
     treatNullAsCurrentTimestamp: false
@@ -170,40 +177,6 @@ operation:
               - columnCounter: e4860080-9bb8-4f7b-b5a0-eb3abc7a7b37
                 stepCounter: 620b5251-23ca-4504-b956-885dd587619b
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 09007040-ffb1-4825-8249-f5fa74c89c44
-          stepCounter: 69f3ee71-5052-4739-a91f-9be4f1495dd1
-        config: {}
-        dataType: TIMESTAMP
-        defaultValue: ""
-        description: ""
-        isSystemCreateDate: true
-        name: SYSTEM_CREATE_DATE
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: f154d5eb-5c32-4112-b7d4-1b4e1e43541f
-          stepCounter: 69f3ee71-5052-4739-a91f-9be4f1495dd1
-        config: {}
-        dataType: TIMESTAMP
-        defaultValue: ""
-        description: ""
-        isSystemUpdateDate: true
-        name: SYSTEM_UPDATE_DATE
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -221,7 +194,7 @@ operation:
   name: FCT_ORDERS
   overrideSQL: false
   schema: ""
-  sqlType: Base-node-types-advanced-deploy:::389
+  sqlType: "572"
   type: sql
   version: 1
 type: Node
