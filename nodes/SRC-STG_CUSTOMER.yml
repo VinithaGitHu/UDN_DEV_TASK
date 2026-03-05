@@ -53,19 +53,6 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c66b8110-8bde-4da4-82ef-bf6ffb0f41f1
-          stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
-        config: {}
-        dataType: NUMBER
-        description: ""
-        isSurrogateKey: true
-        name: STG_CUSTOMER_KEY
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
           columnCounter: a87ed9b4-8880-4e21-baf9-5629f3770c1d
           stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
         config: {}
@@ -255,6 +242,19 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c66b8110-8bde-4da4-82ef-bf6ffb0f41f1
+          stepCounter: f7a2fade-484a-4804-a74f-2a4981d580b5
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: STG_CUSTOMER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:

@@ -53,19 +53,6 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 504360f7-a463-42fd-a719-ea157ea745c8
-          stepCounter: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
-        config: {}
-        dataType: NUMBER
-        description: ""
-        isSurrogateKey: true
-        name: TIM_CUSTOMER_KEY
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
           columnCounter: 2e33232d-90f1-4bb7-accd-12bef6df7252
           stepCounter: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
         config: {}
@@ -263,6 +250,19 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 504360f7-a463-42fd-a719-ea157ea745c8
+          stepCounter: 2a5a28c0-5f86-4876-be2e-966ccadcb80f
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: TIM_CUSTOMER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:

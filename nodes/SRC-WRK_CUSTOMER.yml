@@ -53,19 +53,6 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5a5958fd-0ea6-47c7-b50c-0ce1500f4562
-          stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
-        config: {}
-        dataType: NUMBER
-        description: ""
-        isSurrogateKey: true
-        name: WRK_CUSTOMER_KEY
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
           columnCounter: 0d42b61f-e0dc-4cf1-a3a3-24e5df57cb3b
           stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
         config: {}
@@ -255,6 +242,19 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a5958fd-0ea6-47c7-b50c-0ce1500f4562
+          stepCounter: 5b27b7ce-e66b-4f30-9c8d-b0e5bc1d4b04
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: WRK_CUSTOMER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
