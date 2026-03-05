@@ -3,7 +3,7 @@ id: 3eb156f4-a24b-48db-bb85-48e703178e05
 name: INTTBL_LINEITEM
 operation:
   config:
-    autoRefresh: false
+    changetracking: false
     clusterKey: true
     clusterKeyConfig:
       items:
@@ -14,20 +14,42 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
-    groupByAll: false
-    insertStrategy: UNION ALL
-    lagSpecification:
+    constraintsspec:
       items:
         - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION ALL
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
     selectDistinct: false
     testsEnabled: false
-    warehouseName: dev_wh_xs
+    treatNullAsCurrentTimestamp: false
+    truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: SRC
-  materializationType: interactive table
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
@@ -38,6 +60,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: L_ORDERKEY
         nullable: true
         sourceColumnReferences:
@@ -255,6 +278,97 @@ operation:
               - columnCounter: 273042f0-f9e2-4b7d-86ec-48660dfa1456
                 stepCounter: e5653d16-42f4-4359-83ac-2fadc4ea95fd
             transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6449a030-1041-4b51-86e8-01fc23eb6c18
+          stepCounter: 3eb156f4-a24b-48db-bb85-48e703178e05
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 078b167b-caeb-49af-8b09-f2a475ecaddf
+          stepCounter: 3eb156f4-a24b-48db-bb85-48e703178e05
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 73efb20e-e0f7-49bb-9e29-941d470b58e8
+          stepCounter: 3eb156f4-a24b-48db-bb85-48e703178e05
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a019c105-40ef-4a1d-9edf-f3bb3849aceb
+          stepCounter: 3eb156f4-a24b-48db-bb85-48e703178e05
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20f228b9-92db-480b-83b6-b444115d5562
+          stepCounter: 3eb156f4-a24b-48db-bb85-48e703178e05
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: acd4fd10-983d-4475-bfed-3f39dad78292
+          stepCounter: 3eb156f4-a24b-48db-bb85-48e703178e05
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 68ddf9f0-84fd-4ecf-9b4f-c208cc53867c
+          stepCounter: 3eb156f4-a24b-48db-bb85-48e703178e05
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: INTTBL_LINEITEM_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -272,7 +386,7 @@ operation:
   name: INTTBL_LINEITEM
   overrideSQL: false
   schema: ""
-  sqlType: interactivetable:::602
+  sqlType: "574"
   type: sql
   version: 1
 type: Node

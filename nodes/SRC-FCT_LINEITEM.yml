@@ -3,9 +3,45 @@ id: 57cca44e-70d9-4c09-a673-753df9239006
 name: FCT_LINEITEM
 operation:
   config:
-    postSQL: ""
-    preSQL: ""
+    changetracking: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
+    selectDistinct: false
     testsEnabled: true
+    treatNullAsCurrentTimestamp: false
+    truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
@@ -23,6 +59,7 @@ operation:
         dataType: NUMBER(38,0)
         description: ""
         isBusinessKey: true
+        isChangeTracking: true
         name: L_ORDERKEY
         nullable: true
         sourceColumnReferences:
@@ -274,6 +311,71 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f441e7e8-22ce-402a-858f-53e89d422008
+          stepCounter: 57cca44e-70d9-4c09-a673-753df9239006
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8631b600-ef90-479c-b031-b2ca70fe20d9
+          stepCounter: 57cca44e-70d9-4c09-a673-753df9239006
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f2c7d1a-140b-4266-88b5-5be6f63a3edf
+          stepCounter: 57cca44e-70d9-4c09-a673-753df9239006
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c73bc47b-8ac8-405a-99d4-0311294bb6d0
+          stepCounter: 57cca44e-70d9-4c09-a673-753df9239006
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3bd3f937-b587-495a-827d-3eb94305e422
+          stepCounter: 57cca44e-70d9-4c09-a673-753df9239006
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: FCT_LINEITEM_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -291,7 +393,7 @@ operation:
   name: FCT_LINEITEM
   overrideSQL: false
   schema: ""
-  sqlType: Fact
+  sqlType: "574"
   type: sql
   version: 1
 type: Node

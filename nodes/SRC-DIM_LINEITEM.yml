@@ -3,9 +3,45 @@ id: 65a98974-44cf-4550-8f8b-9f5bcb290083
 name: DIM_LINEITEM
 operation:
   config:
-    postSQL: ""
-    preSQL: ""
+    changetracking: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    lastModifiedComparison: false
+    maxdataretention: ""
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
+    selectDistinct: false
     testsEnabled: true
+    treatNullAsCurrentTimestamp: false
+    truncateBefore: true
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
@@ -376,7 +412,7 @@ operation:
   name: DIM_LINEITEM
   overrideSQL: false
   schema: ""
-  sqlType: Dimension
+  sqlType: "574"
   type: sql
   version: 1
 type: Node

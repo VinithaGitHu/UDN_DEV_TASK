@@ -3,6 +3,7 @@ id: a52ff098-bb89-40ec-b0bc-15e32aee40df
 name: TIM_LINEITEM
 operation:
   config:
+    changetracking: false
     clusterKey: false
     clusterKeyConfig:
       items:
@@ -11,32 +12,36 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
-    devMode: true
-    flagSrcStream: true
-    groupByAll: false
-    insertStrategy: UNION
-    loadType: Insert
-    mergeOrderBy:
+    constraintsspec:
       items:
         - {}
-    multiStreamBehavior: AND
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    groupByAll: false
+    inlineconst: false
+    insertStrategy: UNION
+    lastModifiedComparison: false
+    maxdataretention: ""
     orderby: false
     orderbycolumn:
       items:
         - {}
-    partitionBy:
+    outlineconst: false
+    primary: false
+    primarykeycon:
       items:
         - {}
-    predTask: DATA_TRANSFORMATION_ROOT_TASK
-    rootTask: DATA_TRANSFORMATION_ROOT_TASK
-    scheduleCRON: 5 0-23 * * * America/Los_Angeles
-    schedulePeriod: "60"
-    schedulePeriodOption: Minutes
-    schedulingMode: Warehouse Task
+    primarykeyname: ""
     selectDistinct: false
-    serverlessSize: MEDIUM
+    testsEnabled: false
+    treatNullAsCurrentTimestamp: false
     truncateBefore: true
-    whName: <WAREHOUSE_NAME>
+    type2Dimension: false
   database: ""
   deployEnabled: true
   description: ""
@@ -53,6 +58,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
+        isBusinessKey: true
         name: L_ORDERKEY
         nullable: true
         sourceColumnReferences:
@@ -304,6 +310,71 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b441676-c404-419a-9b14-b8bd28107d79
+          stepCounter: a52ff098-bb89-40ec-b0bc-15e32aee40df
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSystemVersion: true
+        name: SYSTEM_VERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bc432616-572a-4be4-858e-835103defc84
+          stepCounter: a52ff098-bb89-40ec-b0bc-15e32aee40df
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        isSystemCurrentFlag: true
+        name: SYSTEM_CURRENT_FLAG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c9549514-18a8-45fb-be6a-9a39e4ac1fb8
+          stepCounter: a52ff098-bb89-40ec-b0bc-15e32aee40df
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemStartDate: true
+        name: SYSTEM_START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26689ac5-9589-4a4e-8219-1ab9e3a4238b
+          stepCounter: a52ff098-bb89-40ec-b0bc-15e32aee40df
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        isSystemEndDate: true
+        name: SYSTEM_END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ff33b83c-e220-4cd3-b2f4-83a05e878224
+          stepCounter: a52ff098-bb89-40ec-b0bc-15e32aee40df
+        config: {}
+        dataType: NUMBER
+        description: ""
+        isSurrogateKey: true
+        name: TIM_LINEITEM_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -321,7 +392,7 @@ operation:
   name: TIM_LINEITEM
   overrideSQL: false
   schema: ""
-  sqlType: Streamstask:::567
+  sqlType: "574"
   type: sql
   version: 1
 type: Node
