@@ -1,0 +1,92 @@
+fileVersion: 1
+id: 14f8e1b4-4d9d-4cba-b198-535af022a607
+name: UNPIVOT_TABLE
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d694b78-545d-46e7-bb29-b20c61690b46
+          stepCounter: 14f8e1b4-4d9d-4cba-b198-535af022a607
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd417670-aa7e-4abf-b566-d13237f9ad3b
+          stepCounter: 14f8e1b4-4d9d-4cba-b198-535af022a607
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: PRODUCT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7208cae5-16e2-46cb-bdc7-549aa38f0ad6
+          stepCounter: 14f8e1b4-4d9d-4cba-b198-535af022a607
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: MONTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d938f85c-78b8-42f0-b55c-eaabf6f1e036
+          stepCounter: 14f8e1b4-4d9d-4cba-b198-535af022a607
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: SALES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: UNPIVOT_TABLE
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
