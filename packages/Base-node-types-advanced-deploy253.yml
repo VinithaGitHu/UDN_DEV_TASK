@@ -1,31 +1,25 @@
 config:
   entities:
     nodeTypes:
-      "399":
+      "179":
         defaultStorageLocation: null
         isDisabled: false
-      "404":
+      "388":
         defaultStorageLocation: null
         isDisabled: false
-      "409":
+      "389":
         defaultStorageLocation: null
         isDisabled: false
-      "410":
+      "390":
         defaultStorageLocation: null
         isDisabled: false
-      "459":
-        defaultStorageLocation: null
-        isDisabled: false
-      "586":
-        defaultStorageLocation: null
-        isDisabled: false
-      "603":
+      "391":
         defaultStorageLocation: null
         isDisabled: false
   packageVariables: ""
 fileVersion: 1
-id: "@coalesce/snowflake/functional-node-types"
-name: FUN
-packageID: "@coalesce/snowflake/functional-node-types"
-releaseID: c7503f9b-8b1e-47c9-a60c-53f2f1340023
+id: "@coalesce/snowflake/base-node-types-advanced-deploy"
+name: Base-node-types-advanced-deploy253
+packageID: "@coalesce/snowflake/base-node-types-advanced-deploy"
+releaseID: d2b63483-98c0-4cbc-a126-ee8a64bf8c74
 type: Package

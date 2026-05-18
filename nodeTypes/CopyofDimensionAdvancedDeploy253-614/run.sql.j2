@@ -26,12 +26,11 @@ does not permit copying or modification for any other purpose.
  {% set last_modified_col = config.lastModifiedColumn.name | default('') %}
 {%endif%}
 
-{%if config.treatNullAsCurrentTimestamp  and 'TIMESTAMP' in (config.lastModifiedColumn.dataType | upper)  %}
+{%if config.lastModifiedComparison  and 'TIMESTAMP' in (config.lastModifiedColumn.dataType | upper)  %}
      {%set useCurrentTimeStamp = true %}
    {%else%}
      {%set useCurrentTimeStamp = false %}
 {%endif%}
-
 
 
 {# == Fetch source info #}
@@ -44,8 +43,43 @@ does not permit copying or modification for any other purpose.
             {{ test.templateString }}
         {% endif %}
     {% endfor %}
+{% if useCurrentTimeStamp %}
 
+{{ test_stage(
+    'Error: NULL values found in the ' ~ last_modified_col ~
+    ' column selected as lastModifiedColumn. NULL values should be handled in this column.',
+    false
+) }}
 
+{% set ns = namespace(first=true) %}
+
+{% for source in sources %}
+
+    {% for col in source.columns if col.name == last_modified_col %}
+
+        {% set col_transform = get_source_transform(col) %}
+
+        {% if col_transform is not none and col_transform != 'NULL' %}
+
+            {% if not ns.first %}
+                UNION ALL
+            {% endif %}
+
+            SELECT 1
+
+            {{ get_clause(source.join,'from') }}
+
+            WHERE {{ col_transform }} IS NULL
+
+            {% set ns.first = false %}
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endfor %}
+
+{% endif %}						
 {% if node.materializationType == 'table' or node.materializationType == 'transient table' %}
 
 {# == Queries to be excuted before data insertion  == #}
@@ -108,25 +142,25 @@ does not permit copying or modification for any other purpose.
 			     )AS SOURCE_ZERO
 			     ON
 			     {%- for col in columns if col.isSurrogateKey %}
-			     	{{ node.name}}.{{ col.name}} ={{config.insertZeroKeySurrogateKey}}
-			     {% endfor -%}			
+			     	"{{ node.name}}"."{{ col.name}}" = {{config.insertZeroKeySurrogateKey}}
+                 {% endfor -%}			
 			     WHEN MATCHED THEN UPDATE
 			     SET
                  {%- for col in columns if (not col.isSurrogateKey and not col.isBusinessKey) %}
-			     	{{ node.name}}.{{ col.name}} =SOURCE_ZERO.{{ col.name}}
+			     	"{{ node.name}}"."{{ col.name}}" = SOURCE_ZERO."{{ col.name}}"
 			     	{% if not loop.last %}, {% endif %}			
 			     {% endfor -%}
                  WHEN NOT MATCHED THEN INSERT
 			     (
                  {%- for col in columns %}
-			     	{{ col.name}}
+			     	"{{ col.name}}"
 			     	{% if not loop.last %}, {% endif %}			
 			     {% endfor -%}
 			     )
 			     VALUES
 			     (
                  {%- for col in columns %}
-			      SOURCE_ZERO.{{ col.name}}			
+			      SOURCE_ZERO."{{ col.name}}"			
 			     	{% if not loop.last %}, {% endif %}			
 			     {% endfor -%}
 			     )
@@ -137,7 +171,7 @@ does not permit copying or modification for any other purpose.
               UPDATE {{ ref_no_link(node.location.name, node.name) }}
               SET
                   {%- for col in columns if not col.isSurrogateKey and not col.isBusinessKey %}
-                      {{ col.name }} = SOURCE_ZERO.{{ col.name }}
+                      "{{ col.name }}" = SOURCE_ZERO."{{ col.name }}"
                       {%- if not loop.last %}, {% endif %}
                   {%- endfor %}
               FROM (
@@ -174,13 +208,13 @@ does not permit copying or modification for any other purpose.
               ) AS SOURCE_ZERO
 			     {%- for col in columns if col.isSurrogateKey %}
 				 {% if loop.first %} WHERE {% else %} AND {% endif %}
-			     	{{ node.name}}.{{ col.name}} ={{config.insertZeroKeySurrogateKey}}
+			     	"{{ node.name}}"."{{ col.name}}" ={{config.insertZeroKeySurrogateKey}}
 			     {% endfor %}
 				;
               -- Insert Zero Key Record if it does not exist
               INSERT INTO {{ ref_no_link(node.location.name, node.name) }} (
                   {%- for col in columns %}
-                      {{ col.name }}
+                      "{{ col.name }}"
                       {%- if not loop.last %}, {% endif %}
                   {%- endfor %}
               )
@@ -222,7 +256,7 @@ does not permit copying or modification for any other purpose.
                   SELECT 1 FROM {{ ref_no_link(node.location.name, node.name) }} 			     
 				 {%- for col in columns if col.isSurrogateKey %}
 				 {% if loop.first %} WHERE {% else %} AND {% endif %}
-			     	{{ node.name}}.{{ col.name}} ={{config.insertZeroKeySurrogateKey}}
+			     	"{{ node.name}}"."{{ col.name}}" = {{config.insertZeroKeySurrogateKey}}
 			     {% endfor %}
               )
             ;
@@ -295,8 +329,6 @@ does not permit copying or modification for any other purpose.
                     "DIM"."{{ col.name }}" + 1
                 {% elif col.isSystemCurrentFlag %}
                     'Y'
-                {% elif col.name == last_modified_col and useCurrentTimeStamp %}
-					     COALESCE({{ get_source_transform(col) }},CURRENT_TIMESTAMP())
                 {% else %}
                    {{ get_source_transform(col) }}
                 {% endif %}
@@ -390,8 +422,6 @@ does not permit copying or modification for any other purpose.
                     DATEADD(MILLISECONDS, -1, CAST(CURRENT_TIMESTAMP AS TIMESTAMP))
                 {% elif col.isSystemCurrentFlag %}
                     'N'
-                {% elif col.name == last_modified_col and useCurrentTimeStamp %}
-				    COALESCE({{ get_source_transform(col) }},CURRENT_TIMESTAMP())
                 {% else %}
                     "DIM"."{{ col.name }}"
                 {% endif %}
@@ -513,14 +543,20 @@ does not permit copying or modification for any other purpose.
                     WHERE
                     {% for col in source.columns if col.isBusinessKey -%}
                         {% if not loop.first %}
-                            AND
+                          AND
+                        {% endif%}
+                        {% if col.isBusinessKey %}
+                            {{ get_source_transform(col) }} IS NULL
                         {% endif %}
-                        {{ get_source_transform(col) }} IS NULL
+                    {% endfor %}
+
+                       {% if config.insertZeroKey %}
+                        AND "DIM"."{{ get_value_by_column_attribute("isSurrogateKey") }}" <> {{config.insertZeroKeySurrogateKey}}							 
+                        {% endif %}
 
                         {% if config.deleteStrategy == "SOFT DELETE" %}
                             AND "DIM"."{{ get_value_by_column_attribute("isSystemCurrentFlag") }}" != '0'
                         {% endif %}
-                    {% endfor %}
                 
                     {{ get_clause(joinclause) }}
 
@@ -772,7 +808,7 @@ CREATE OR REPLACE TEMP TABLE {{ ref_no_link(node.location.name,"SRC_STAGE") }}  
                 "DIM"."{{ col.name }}" IS NULL
             {% endfor %}
             {{ get_clause(joinclause) }}
-            {% if config.groupByAll or config.lastModifiedComparison%}
+            {% if config.groupByAll %}
             GROUP BY ALL
             {% endif %}
             {{ sortorder_by_colv() }}
@@ -849,7 +885,7 @@ CREATE OR REPLACE TEMP TABLE {{ ref_no_link(node.location.name,"SRC_STAGE") }}  
                     {% endif %}
                 {% endfor %}
             {{  get_clause(joinclause)  }}
-            {% if config.groupByAll or config.lastModifiedComparison %}
+            {% if config.groupByAll %}
             GROUP BY ALL
             {% endif %}
             {{ sortorder_by_colv() }}
@@ -925,7 +961,7 @@ CREATE OR REPLACE TEMP TABLE {{ ref_no_link(node.location.name,"SRC_STAGE") }}  
                     {% endif %}
                 {% endfor %}
             {{  get_clause(joinclause)  }}
-            {% if config.groupByAll or config.lastModifiedComparison%}
+            {% if config.groupByAll %}
             GROUP BY ALL
             {% endif %}
             {{ sortorder_by_colv() }}
@@ -1059,7 +1095,7 @@ CREATE OR REPLACE TEMP TABLE {{ ref_no_link(node.location.name,"SRC_STAGE") }}  
                 {% endfor %}
             
             {{  get_clause(joinclause)  }}
-            {% if config.groupByAll or config.lastModifiedComparison%}
+            {% if config.groupByAll %}
                 GROUP BY ALL
             {% endif %}
             {{ sortorder_by_colv() }}) 
@@ -1195,10 +1231,6 @@ END
                                     '0'
                                 {% elif col.isSystemEndDate %}
                                     DATEADD(MILLISECONDS, -1, CAST(CURRENT_TIMESTAMP AS TIMESTAMP))
-                                {% elif col.name == last_modified_col and useCurrentTimeStamp %}
-					                "DIM"."{{col.name}}" AS "{{ col.name }}",
-						            COALESCE("DIM"."{{last_modified_col}}",CURRENT_TIMESTAMP()) as COMPARISON_VALUE,
-						            MAX ("DIM"."{{last_modified_col}}") AS MAX_TARGET_VALUE		    
                                 {% elif col.name == last_modified_col and not useCurrentTimeStamp%}
 					                 "DIM"."{{col.name}}" AS "{{ col.name }}",
 						             "DIM"."{{last_modified_col}}" AS COMPARISON_VALUE,
@@ -1221,9 +1253,17 @@ END
                             {% for col in source.columns if col.isBusinessKey -%}
                                 {% if not loop.first %}
                                     AND
+                                {% endif%}
+                                {% if col.isBusinessKey %}
+                                    {{ get_source_transform(col) }} IS NULL
                                 {% endif %}
-                                {{ get_source_transform(col) }} IS NULL
-                            {% endfor %}     
+                            {% endfor %} 
+                            {% if config.insertZeroKey %}
+                              AND "DIM"."{{ get_value_by_column_attribute("isSurrogateKey") }}" <> {{config.insertZeroKeySurrogateKey}}																	   										 
+                            {% endif %}
+                            {% if config.deleteStrategy == "SOFT DELETE" %}
+                                    AND "DIM"."{{ get_value_by_column_attribute("isSystemCurrentFlag") }}" != '0'
+                            {% endif %}     
                              {{ get_clause(joinclause) }}   
                  {% if config.groupByAll or config.lastModifiedComparison %}
                      GROUP BY ALL
@@ -1320,8 +1360,7 @@ END
                     {% endif %}
                 {% endfor %}
              {%else%}  
-                    AND ("SRC".COMPARISON_VALUE > "SRC".MAX_TARGET_VALUE 
-                    OR "SRC".MAX_TARGET_VALUE IS NULL)
+                    AND ("SRC".COMPARISON_VALUE > "SRC".MAX_TARGET_VALUE) 
              {%endif%}     
             THEN UPDATE SET
             {%- for col in includeColList if not (  col.isBusinessKey or

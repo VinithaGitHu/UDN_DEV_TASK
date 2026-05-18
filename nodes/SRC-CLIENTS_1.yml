@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 73a5d112-2f74-4655-89ae-7e1bb2bdd793
-name: SALES_DATA
+id: 05afb35c-0902-4cad-8ffa-04ab1ca83692
+name: CLIENTS_1
 operation:
   database: ""
   deployEnabled: true
@@ -13,13 +13,32 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 4257de45-237f-44f9-a947-1377f5f665e0
-          stepCounter: 73a5d112-2f74-4655-89ae-7e1bb2bdd793
+          columnCounter: 0c03c9fd-80b0-4d6b-9476-8846b037bedb
+          stepCounter: 05afb35c-0902-4cad-8ffa-04ab1ca83692
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: CLIENT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e232f440-90b0-43cf-89dd-2553196171bb
+          stepCounter: 05afb35c-0902-4cad-8ffa-04ab1ca83692
         config: {}
         dataType: VARCHAR(16777216)
         defaultValue: ""
         description: ""
-        name: PRODUCT
+        name: CLIENT_NAME
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -32,13 +51,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 95bb88b2-ec0d-4f54-a585-41383d848250
-          stepCounter: 73a5d112-2f74-4655-89ae-7e1bb2bdd793
+          columnCounter: 961c0677-9f8d-4e68-8a1f-9deb1e9976d6
+          stepCounter: 05afb35c-0902-4cad-8ffa-04ab1ca83692
         config: {}
-        dataType: NUMBER(38,0)
+        dataType: VARCHAR(16777216)
         defaultValue: ""
         description: ""
-        name: JAN_SALES
+        name: EMAIL
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -51,13 +70,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: b142afea-ed02-47da-9f06-cb6a2fbbb3f8
-          stepCounter: 73a5d112-2f74-4655-89ae-7e1bb2bdd793
+          columnCounter: b0a5fe16-efaf-4650-8bf0-4b389cdb8f14
+          stepCounter: 05afb35c-0902-4cad-8ffa-04ab1ca83692
         config: {}
-        dataType: NUMBER(38,0)
+        dataType: VARCHAR(16777216)
         defaultValue: ""
         description: ""
-        name: FEB_SALES
+        name: REGION
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -70,13 +89,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: e535c0e8-e91a-48de-9504-93c93d3df64b
-          stepCounter: 73a5d112-2f74-4655-89ae-7e1bb2bdd793
+          columnCounter: 21f8f363-94b2-49a0-a3d8-f3e86f58bb3d
+          stepCounter: 05afb35c-0902-4cad-8ffa-04ab1ca83692
         config: {}
-        dataType: NUMBER(38,0)
+        dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
         description: ""
-        name: MAR_SALES
+        name: UPDATE_TIME
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -84,7 +103,7 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-  name: SALES_DATA
+  name: CLIENTS_1
   schema: ""
   sqlType: Source
   type: sourceInput

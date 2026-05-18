@@ -1,5 +1,5 @@
 fileVersion: 1
-id: "598"
+id: "614"
 isDisabled: false
 metadata:
   defaultStorageLocation: null
@@ -156,17 +156,17 @@ metadata:
         displayName: Last Modified Column
         enableIf: "{% if node.materializationType != 'view' and config.lastModifiedComparison and config.updateStrategy == 'MERGE'%} true {% else %} false {% endif %}"
 
-      - type: label
-        attributeName: l2
-        displayName: The below toggle is applicable only for timestamp column
-        enableIf: "{% if node.materializationType != 'view' and config.lastModifiedComparison and config.updateStrategy == 'MERGE'%} true {% else %} false {% endif %}"
+    			   
+    					 
+    																		 
+    																																								   
 
 
-      - type: toggleButton
-        attributeName: treatNullAsCurrentTimestamp
-        displayName: Treat NULL as Current Timestamp
-        default: false
-        enableIf: "{% if node.materializationType != 'view' and config.lastModifiedComparison and config.updateStrategy == 'MERGE' %} true {% else %} false {% endif %}"
+    					  
+    											  
+    												
+    				  
+    																																									
 
       - type: toggleButton
         attributeName: type2Dimension
@@ -399,5 +399,5 @@ metadata:
       dataType: TIMESTAMP
       placement: end
       attributeName: isSystemUpdateDate
-name: Copy of Dimension Advanced Deploy
+name: Copy of Dimension Advanced Deploy253
 type: NodeType
