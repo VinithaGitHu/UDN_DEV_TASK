@@ -111,7 +111,7 @@ does not permit copying or modification for any other purpose.
                     DISTINCT
                     {% endif %}
                     {% for col in source.columns %}	    
-                       {% elif col.name == last_modified_col%}
+                       {% if col.name == last_modified_col %}
 					     {{ get_source_transform(col) }} AS "{{ col.name }}",
 						 {{ get_source_transform(col) }} AS COMPARISON_VALUE,
 					     MAX ("DIM"."{{last_modified_col}}") AS MAX_TARGET_VALUE
@@ -150,7 +150,7 @@ does not permit copying or modification for any other purpose.
                             {% endif %}
                             {%- for col in source.columns %}
                                 {% if col.isSystemUpdateDate %}
-                                    NULL    
+                                    NULL	    
                                 {% elif col.name == last_modified_col%}
 					                 "DIM"."{{col.name}}" AS "{{ col.name }}",
 						             "DIM"."{{last_modified_col}}" AS COMPARISON_VALUE,
