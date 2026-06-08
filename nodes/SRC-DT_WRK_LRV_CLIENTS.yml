@@ -1,0 +1,171 @@
+fileVersion: 1
+id: 5cb339b5-99ea-45a4-b591-ee675631a54e
+name: DT_WRK_LRV_CLIENTS
+operation:
+  config:
+    advanceWarehouse: false
+    backfill: false
+    backfillSource: ""
+    backfillSourceSchema: ""
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    cpygrants: false
+    downstreamOption: false
+    immutabilityConstraint: false
+    immutableExpression: ""
+    initialize: ON_CREATE
+    initializeWarehouseSize: ""
+    lagSpecification:
+      items:
+        - lagPeriod: Minutes
+          lagValue: "60"
+    orderBy:
+      items:
+        - colName:
+            columnCounter: 0a99c2ef-b40c-495f-8ab2-1f7792f62fed
+            stepCounter: 5cb339b5-99ea-45a4-b591-ee675631a54e
+    orderByDateTime:
+      items:
+        - {}
+    orderseq:
+      items:
+        - {}
+    partitionBy:
+      items:
+        - partColName:
+            columnCounter: 885d79d7-826a-4d94-8668-78c4f9900eb3
+            stepCounter: 5cb339b5-99ea-45a4-b591-ee675631a54e
+    recordVersioning: Datetime Column
+    recordorderBy:
+      items:
+        - {}
+    refreshWarehouseSize: ""
+    refresh_mode: AUTO
+    timeTravel: false
+    timeTravelreference: ""
+    timeTraveltype: ""
+    timeTravelvalue: ""
+    warehouseName: COMPUTE_WH
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: SRC
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 885d79d7-826a-4d94-8668-78c4f9900eb3
+          stepCounter: 5cb339b5-99ea-45a4-b591-ee675631a54e
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CLIENT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2fb71472-77f1-40d5-b937-415508b26bc9
+                stepCounter: c2d93b69-dce8-49a1-a790-5d7b99640240
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 559b432c-33ea-450d-a21a-f663f10a10c9
+          stepCounter: 5cb339b5-99ea-45a4-b591-ee675631a54e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: CLIENT_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4faa7d1f-db84-4a9d-9cf2-e63e91a1654b
+                stepCounter: c2d93b69-dce8-49a1-a790-5d7b99640240
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b3addc1-f12a-47d7-ad0d-6b6126cb95f2
+          stepCounter: 5cb339b5-99ea-45a4-b591-ee675631a54e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: EMAIL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2e7acf4c-a4a2-417c-a237-d92adc51e122
+                stepCounter: c2d93b69-dce8-49a1-a790-5d7b99640240
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81ea7ae2-c5b8-4a07-a050-b503c4e16e53
+          stepCounter: 5cb339b5-99ea-45a4-b591-ee675631a54e
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: REGION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32a0c1d0-aab3-4530-a31a-956f3b473ad8
+                stepCounter: c2d93b69-dce8-49a1-a790-5d7b99640240
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a99c2ef-b40c-495f-8ab2-1f7792f62fed
+          stepCounter: 5cb339b5-99ea-45a4-b591-ee675631a54e
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: UPDATE_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b8e7556-7508-41ed-9b48-a049eb66674f
+                stepCounter: c2d93b69-dce8-49a1-a790-5d7b99640240
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a61f95e-ceb5-46c1-ab8c-d84fceb8c2fb
+          stepCounter: 5cb339b5-99ea-45a4-b591-ee675631a54e
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: RECORD_CREATED_DATE
+        nullable: true
+        recordCreated: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: FIRST_VALUE({%if config.recordVersioning not in ('Integer Column')%}{{order_by_col()}}{%else%} {{order_by_col_int()}}{%endif%}) OVER (PARTITION BY {{ partition_by() }} ORDER BY {{ order_by_col() }} asc)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          CLIENTS: c2d93b69-dce8-49a1-a790-5d7b99640240
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: CLIENTS
+        join:
+          joinCondition: FROM {{ ref('SRC', 'CLIENTS') }} "CLIENTS"
+        name: DT_WRK_LRV_CLIENTS
+        noLinkRefs: []
+  name: DT_WRK_LRV_CLIENTS
+  overrideSQL: false
+  schema: ""
+  sqlType: Dynamic:::351
+  type: sql
+  version: 1
+type: Node
