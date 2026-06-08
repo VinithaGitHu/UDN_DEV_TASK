@@ -10,13 +10,18 @@ operation:
     clusterKey: false
     clusterKeyConfig:
       items:
-        - {}
+        - columnName:
+            columnCounter: 3708033e-50c7-401d-91c5-66106dc09803
+            stepCounter: e0d77584-7d35-4c65-a568-c72b9562926b
     clusterKeyConfigExpressions:
       items:
-        - {}
-    clusterKeyExpressions: false
+        - columnNameExpressions:
+            columnCounter: 3708033e-50c7-401d-91c5-66106dc09803
+            stepCounter: e0d77584-7d35-4c65-a568-c72b9562926b
+          sqlExpression: ex. trunc(<column_name>, -5)
+    clusterKeyExpressions: true
     cpygrants: false
-    downstreamOption: false
+    downstreamOption: true
     immutabilityConstraint: false
     immutableExpression: ""
     initialize: ON_CREATE
